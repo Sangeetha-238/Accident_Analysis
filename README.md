@@ -7,10 +7,48 @@
 * Chaitanya Shekar
 
 ## Overview
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Data Description
+* `data/TrainEquipment/*.csv`
+  * Equipment safety data from the Federal Railroad Association (FRA) from 1975 to 2022
+  * Sources: 
+    * https://safetydata.fra.dot.gov/officeofsafety/publicsite/on_the_fly_download.aspx
+    * https://railroads.dot.gov/forms-guides-publications/guides/618054-rail-equipment-accidentincident-thru-52011-206kb
+* `data/TrainEquipmentAppendix/*.xls`
+  * Metadata encoding data that maps railroad accident codes to railroad accident types
+  * Sources:
+    * https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-train-operation-human-factor
+    * https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-signal-and-communication
+    * https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-track-roadbed-and-structure
+    * https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-mechanical-and-electrical-failures
+    * https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-miscellaneous-causes-not-otherwise-listed 
+* `data/TrainEquipment_merged.csv`
+  * Merged csv file of data in `data/TrainEquipment` subsetted for columns of interest
+* `data/TrainEquipmentAppendix_merged.csv`
+  * Merged csv file of data in `data/TrainEquipmentAppendix`
+* `data/train_final.csv`
+  * Merged csv file of `TrainEquipment_merged.csv` and `TrainEquipmentAppendix_merged.csv`
+* `data/airplanes.csv`
+  * Global airplane crash data from Kaggle (originally from OpenData by Socrata but is no longer publicly available) from 1908 to 2009.
+  * Sources:
+    * https://www.kaggle.com/datasets/saurograndi/airplane-crashes-since-1908
+* `data/airplanes_final.csv`
+  * Subsetted csv file of `airplanes.csv` for only airplane crashes in the U.S.
+* `data/world_country_and_usa_states_latitude_and_longitude_values.csv`
+  * Longitude and latitude data for countries from Kaggle (originally from Google Developers public data)
+  * Sources:
+    * https://www.kaggle.com/datasets/paultimothymooney/latitude-and-longitude-for-every-country-and-state
 
 ## Code Description
+* `code/munging.ipynb`
+  * **Trains:**
+  * **Airplanes:**
+* `code/choropleth.ipynb`
+  * **Trains:**
+  * **Airplanes:**
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 # ANLY 503 Project Repo
 
 This is the team repository you will be use for your 503 project. All your team's work will happen here. 
