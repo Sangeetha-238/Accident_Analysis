@@ -76,8 +76,8 @@ In both cases, we were interested in understanding the following:
   * **Trains:** Created 5 interactive histograms using plotly for train accidents in the United States from 1975 to 2022. The histograms provide insights into the number of train accidents by state and year, top causes of train accidents for all states, percentage of train accidents by type, number of train accidents by weather condition, and number of train accidents by type of train. Used facet, slider and dropdown menus in Plotly charts which make the charts much more interactive and easier to understand. 
   * **Airplanes:** Created 4 interactive histograms using plotly for airplanes accidents in the United States from 1908 to 2009. The histograms provide insights into the number of airplane accidents by state and year, number of flight crashs by year, top 5 pperators with the most flight crashes, and fatalities in flight crashes. Used facet, slider and dropdown menus in Plotly charts which make the charts much more interactive and easier to understand. 
   * Key functions:
-    * 'px.histogram' : creates interactive plotly histogram. 
-    * 'go.bar' : creates interactive plotly bar plot.
+    * `px.histogram` : creates interactive plotly histogram. 
+    * `go.bar` : creates interactive plotly bar plot.
     * `write_img`: the function takes a Plotly image as input and converts it to a static image before writing it to a file. 
 
 --------------------------------------- DELETE BELOW ONCE DONE --------------------------------------------------------
