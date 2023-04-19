@@ -72,6 +72,13 @@ In both cases, we were interested in understanding the following:
     * `create_folium_map`: creates folium maps. Appropriately handles labels and aesthetic encodings based on dataset
 * Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+* `code/Histogram.ipynb`
+  * **Trains:** Created 5 interactive histograms using plotly for train accidents in the United States from 1975 to 2022. The histograms provide insights into the number of train accidents by state and year, top causes of train accidents for all states, percentage of train accidents by type, number of train accidents by weather condition, and number of train accidents by type of train. Used facet, slider and dropdown menus in Plotly charts which make the charts much more interactive and easier to understand. 
+  * **Airplanes:** Created 4 interactive histograms using plotly for airplanes accidents in the United States from 1908 to 2009. The histograms provide insights into the number of airplane accidents by state and year, number of flight crashs by year, top 5 pperators with the most flight crashes, and fatalities in flight crashes. Used facet, slider and dropdown menus in Plotly charts which make the charts much more interactive and easier to understand. 
+  * Key functions:
+    * 'px.histogram' : creates interactive plotly histogram. 
+    * 'go.bar' : creates interactive plotly bar plot.
+    * `write_img`: the function takes a Plotly image as input and converts it to a static image before writing it to a file. 
 
 --------------------------------------- DELETE BELOW ONCE DONE --------------------------------------------------------
 # ANLY 503 Project Repo
