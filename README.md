@@ -86,10 +86,10 @@ In both cases, we were interested in understanding the following:
 * `code/correlation.ipynb`
   * **Trains:**  First created a correlation matrix for the train dataset. Then created a heatmap to visualize the correlation matrix. Saved the plot as a png. Then, created another correlation matrix for most used words in the train accident summary. Then created a heatmap to visualize the correlation matrix with the Damage. Saved the plot as a png. Also, consolidated the plots and ctreated an interactive plotly heatmap for the correlation matrix.
   * **Airplanes:** First created a correlation matrix for the airplane dataset. Then created a heatmap to visualize the correlation matrix. Saved the plot as a png. Then, created another correlation matrix for most used words in the aircrash Description. Then created a heatmap to visualize the correlation matrix with the Fatalities. Saved the plot as a png.Also, consolidated the plots and ctreated an interactive plotly heatmap for the correlation matrix.
-* Key functions:
-  * `word_counts.sum`: Calculate the total frequency for each word
-  * `pio.write_image`: saves interactive plots to html file
-  * `corr` : Calculates the correlation between the columns of a dataframe
+  * Key functions:
+    * `word_counts.sum`: Calculate the total frequency for each word
+    * `pio.write_image`: saves interactive plots to html file
+    * `corr` : Calculates the correlation between the columns of a dataframe
 
 
 * Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
