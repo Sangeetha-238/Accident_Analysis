@@ -70,7 +70,7 @@ In both cases, we were interested in understanding the following:
     * `save_imgs`: saves images of each year for plotly choropleths
     * `create_gif`: converts images in a specified directory into a gif
     * `create_folium_map`: creates folium maps. Appropriately handles labels and aesthetic encodings based on dataset
-  * `code/line_charts.ipynb`
+* `code/line_charts.ipynb`
   * **Trains:** Created interactive plotly time series line chart for train deaths and injuries from 1975 to 2022. The chart has a slider that enables a subset of the data by date to be visualized. Saved the figure as a png. 
   * **Airplanes:** Created interactive plotly time series line chart for plane deaths onboard and on the gruond from 1908 to 2009. The chart has a slider that enables a subset of the data by date to be visualized. Saved the figure as a png. 
   * Key functions:
