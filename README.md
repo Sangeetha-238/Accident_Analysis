@@ -74,8 +74,8 @@ In both cases, we were interested in understanding the following:
   * **Trains:** Created interactive plotly time series line chart for train deaths and injuries from 1975 to 2022. The chart has a slider that enables a subset of the data by date to be visualized. Saved the figure as a png. 
   * **Airplanes:** Created interactive plotly time series line chart for plane deaths onboard and on the gruond from 1908 to 2009. The chart has a slider that enables a subset of the data by date to be visualized. Saved the figure as a png. 
   * Key functions:
-    * `px.line`: creates interactive line chart. Appropriately handles labels and aesthetic encodings based on dataset. 
-    * `px.update_xaxes`: enables interactive slider to be added to line chart. 
+    * `create_line_chart`: creates interactive line chart. Appropriately handles labels and aesthetic encodings based on dataset. Includes interactive slider to display subset of line chart. 
+
 * Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 * `code/Histogram.ipynb`
