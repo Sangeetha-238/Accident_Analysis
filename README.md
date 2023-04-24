@@ -21,7 +21,7 @@ In both cases, we were interested in understanding the following:
 
 ## Data Description
 * `data/TrainEquipment/*.csv`
-  * Equipment safety data from the Federal Railroad Association (FRA) from 1975 to 2022
+  * Equipment safety data from the Federal Railroad Administration (FRA) from 1975 to 2022
   * Sources: 
     * https://safetydata.fra.dot.gov/officeofsafety/publicsite/on_the_fly_download.aspx
     * https://railroads.dot.gov/forms-guides-publications/guides/618054-rail-equipment-accidentincident-thru-52011-206kb
