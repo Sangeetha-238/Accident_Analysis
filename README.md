@@ -6,18 +6,39 @@
 * Sangeetha Ramesh
 * Chaitanya Shekar
 
-## Motivations & Overview
+## Abstract
+This project analyzes railroad and airplane accident data over time.  The objective of this analysis is to determine any factors that could help explain these accidents, the impact of these accidents in terms of the number of fatalities and damages, as well as how often these accidents occur over the years. The accident data was analyzed by weather, temperature, region (both broad geographical regions and states individually) and time. Train data contained injuries and fatalities in each accident; plane data contained fatalities on board the aircraft and on the ground in each accident.
+
+Our analysis found that railroad and airplane accidents are not particularly rare in the U.S. Additionally, weather conditions seem to play an impact in train accidents, and there are specific regions with more prevalent railroad and airplane accidents.
+
+## Introduction & Motivations
 With the East Palestine train derailment in Ohio on February 3, 2023, footage of the chemical burn and its aftermath on the residents and wildlife received significant media attention, lasting over a month since the incident. Considering the media and political stir that followed, we were curious why this incident in particular gained so much publicity.
 
 While considering the derailment in Ohio, we also wondered if other large transportation vehicle accidents occurred in the U.S., which led us to also consider airplane accidents. Globally, airplane incidents seem to catch mainstream headlines quite frequently, from as "minor" as two planes nearly colliding on the runway to as devastating as a 747 crashing.
 
-**--TO DO: add more research questions (if applicable)--**
-
+## Research Question
 In both cases, we were interested in understanding the following:
-* Did the Ohio train derailment gain so much traction because train derailments in general are exceedingly rare? Or was it because this derailment in particular had noticeably devastating effects? 
-* While aircraft accidents seem to occur quite frequently globally, do they really happen that much in the U.S.? Even when they occur, how severe are the accidents?
+1. Did the Ohio train derailment gain so much traction because train derailments in general are exceedingly rare? Or was it because this derailment in particular had noticeably devastating effects?
+2. While aircraft accidents seem to occur quite frequently globally, do they really happen that much in the U.S.? Even when they occur, how severe are the accidents?
+3. Is there a rise in aircraft accident frequency as air travel became more available to the public? Additionally, is there a decrease in train accidents once plane travel was popularized?
+4. How do train and plane accidents differ based on region?
+5. Are weather conditions related to train accidents?
+6. What States have the most train and plane accidents? What are the corresponding Damage/Fatalities?
 
-**--TO DO: add summary of findings--**
+## Methodology
+Train accident data from 1975 to 2022 was collected from the Federal Railroad Administration (FRA). Respective metadata encodings that maps railroad accident codes to railroad accident types were also gathered from the FRA. The FRA accident data were concatenated into a cumulative CSV file. Similarly, the accidents encodings were concatenated into a cumulative CSV file. The two datasets were then merged into one large dataset based on the accident codes, and the data was subsetted for only specific columns of interest (e.g. date, number of casualties, number of injuries, longitude/latitude). With the subsetted data, data conversion was performed to transform the data into a more understandable format. For example, the abbreviated string date representation was converted to a numeric representation (e.g. 75 ⇒ 1975), fips state encodings were converted to the string state abbreviation, and numeric weather encodings were converted to their respective string representation.
+
+Aircraft accident data from 1908 to 2009 was collected from Kaggle (which was originally hosted on OpenData by Socrata but is no longer publicly available). Since the dataset contained global aircraft accident records, the data was subsetted for only crash incidents that occurred in the U.S. via regex on the location. Additionally, the location column was further split into two city and state columns via regex. It should be noted that not all states had data for plane crashes for every year, which may be a result of lack of data collection or lack of accidents. Regardless, this does create gaps in our data for airplane accidents. 
+
+## Results
+1. Train accidents that lead to death and injuries seem to be a relatively regular occurrence throughout the U.S. As such, it seems that the East Palestine accident gained so much attention not because of the rarity of train derailments but perhaps because of the incidents following the accident and the chemical burnoff.
+2. As the lack of yearly data for each state suggests, airplane accidents that lead to onboard and ground deaths seem to be quite infrequent. When they occur, expectedly, there are great casualties onboard and on the ground. 
+3. Airplane accidents did result in more fatalities once commercial air travel became more popular, with onboard fatalities generally being greater than on ground fatalities. One notable exception is Sept. 11, 2001, when the ground deaths skyrocketed due to the terrorist attacks. For train accidents, injuries outweigh the fatalities over time. Additionally, there is no noticeable consistent decrease in injuries or deaths apart from around 2019 onwards. This could partly be explained by COVID-19’s halt on transportation. 
+4. Weather appears to have a certain impact on train accidents. More damage seems to occur when the temperature is below 40 degrees Fahrenheit and cloudy. There is relatively more damage during snowfall. Rain also has a slight effect on accidents.
+5. The states that are most affected by air crashes and train accidents are Texas, Illinois, New York, and California.
+
+## Conclusion
+The study looked into railroad and airplane accidents in the United States. The findings reveal that train accidents resulting in death and injuries are not uncommon in the United States, with injuries outweighing fatalities over time. Similarly, airplanes crashes that result in onboard and ground deaths are uncommon, but when they do occur, the casualties are significant. The study also shows that weather conditions, such as temperature, snow, and rain, have an impact on railway accidents, with snowfall causing the most damage. Finally, Texas, Illinois, New York, and California are the states most hit by aviation crashes and train accidents. These findings may assist policymakers and transportation authorities in taking strategies to prevent or lessen future incidents.
 
 ## Data Description
 * `data/TrainEquipment/*.csv`
