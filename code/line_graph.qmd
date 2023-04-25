@@ -1,0 +1,107 @@
+---
+title: "line Graph"
+format: html
+editor: visual
+---
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE}
+library(flipbookr)
+library(tidyverse)
+library(ggplot2)
+library(forecast)
+library(astsa) 
+library(xts)
+library(tseries)
+library(fpp2)
+library(fma)
+library(lubridate)
+library(tidyverse)
+library(TSstudio)
+library(quantmod)
+library(tidyquant)
+library(plotly)
+library(ggplot2)
+require(gridExtra)
+options(dplyr.summarise.inform = FALSE)
+```
+
+# read data
+
+```{r}
+library(plotly)
+df <- read.csv("../data/train_final.csv")
+```
+
+```{r fig.height = 4}
+
+df$DATE<-as.Date(df$DATE,"%m/%d/%Y")
+#montly data
+mean_data <- df %>% 
+  mutate(month = month(DATE), year = year(DATE)) %>% 
+  group_by(year, month) %>% 
+  summarize(mean_value = mean(ACCDMG))
+month<-ts(mean_data$mean_value,start = c(1975, 1),frequency = 12)
+
+# Create a data frame with the time series data
+ts_data <- data.frame(Date = time(month), Value = coredata(month))
+
+t <- list(
+  family = "sans serif",
+  size = 16)
+# Create an interactive time series plot using plotly
+p <- plot_ly(ts_data, x = ~Date, y = ~Value, type = "scatter", mode = "lines",
+              line = list(color = "green")) %>%
+  layout(title = list(text='Train Accidents(1957 -2022)', y = 0.95, x = 0.5, xanchor = 'center', yanchor =  'top'), font=t,
+         xaxis = list(title = "Year"), yaxis = list(title = "Number of Accidents"),xaxis = list(tickfont = list(size = 15)), 
+        yaxis = list(tickfont = list(size = 5)))
+
+
+# Display the plot
+p
+
+htmlwidgets::saveWidget(
+                widget = p, #the plotly object
+                file = "../img/timeseries/train_accidedents_timeseries.html", #the path & file name
+                selfcontained = TRUE #creates a single html file
+                )
+```
+
+```{r warning=FALSE}
+library(plotly)
+df <- read.csv("../data/airplanes_final.csv")
+
+df <- df %>%
+  separate(Location, c("City", "State"), sep = ",\\s*", remove = FALSE)
+
+```
+
+```{r fig. height = 5}
+df$Date<-as.Date(df$Date,"%m/%d/%Y")
+# Create time series of yearly state counts
+state_counts <- df %>%
+  mutate(year = year(Date)) %>% # Extract year from Date column
+  group_by(year) %>%
+  summarize(count = n_distinct(State)) %>% # Count number of unique states for each year
+  ts(start = c(1908, 1), frequency = 1) # Convert to time series object
+
+state_counts_df <- as.data.frame(state_counts)
+
+t <- list(
+  family = "sans serif",
+  size = 16)
+# Create an interactive time series plot using plotly
+p <- plot_ly(state_counts_df, x = ~year, y = ~count, type = "scatter", mode = "lines",
+              line = list(color = "darkblue")) %>%
+  layout(title = list(text='Aircraft Accidents (1957 -2022)', y = 0.95, x = 0.5, xanchor = 'center', yanchor =  'top'), font=t,
+         xaxis = list(title = "Year"), yaxis = list(title = "Number of Accidents"),xaxis = list(tickfont = list(size = 15)), 
+        yaxis = list(tickfont = list(size = 5)))
+
+# Display the plot
+p
+
+htmlwidgets::saveWidget(
+                widget = p, #the plotly object
+                file = "../img/timeseries/aircraft_accidedents_timeseries.html", #the path & file name
+                selfcontained = TRUE #creates a single html file
+                )
+```
