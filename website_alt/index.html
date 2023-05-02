@@ -25,7 +25,6 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#intro">Introduction</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#resqs">Research<br>Questions</a></li>
                         <li class="nav-item"><a class="nav-link" href="#analysis">Analysis</a></li>
                         <li class="nav-item"><a class="nav-link" href="#conc">Conclusions</a></li>
                         <li class="nav-item"><a class="nav-link" href="./pages/methods.html">Data &<br>Methods</a></li>
@@ -56,81 +55,21 @@
                 </div>
             </div>
         </section>
-        <!-- Resarch Questions-->
-        <section class="page-section" id="resqs">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Research Questions</h2>
-                </div>
-                <ul class="timeline">
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>1</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Did the Ohio train derailment gain so much traction because train derailments in general are exceedingly rare? Or was it because this derailment in particular had noticeably devastating effects?</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>2</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">While aircraft accidents seem to occur quite frequently globally, do they really happen that much in the U.S.? Even when they occur, how severe are the accidents?
-                            </p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>3</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Is there a rise in aircraft accident frequency as air travel became more available to the public? Additionally, is there a decrease in train accidents once plane travel was popularized?
-                            </p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>4</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Are weather conditions related to train accidents?
-                            </p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>5</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">What States have the most train and plane accidents? What are the corresponding Damage/Fatalities?
-                            </p></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
         <!-- Analysis-->
         <section class="page-section bg-light" id="analysis">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Analysis</h2>
+                    <h2 class="section-heading">Analysis</h2>
                 </div>
                 <br><br>
 
                 <!-- Q1 -->
                 <div class="text-center">
                     <h3 class="section-heading">Question 1</h3>
+                    <h4 class="text-muted"><p>Did the Ohio train derailment gain so much traction because train derailments in general are exceedingly rare? Or was it because this derailment in particular had noticeably devastating effects?</p></h4>
                 </div>
                 <div class="row">
-                    <iframe src="../img/timeseries/train_accidedents_timeseries.html" 
-                        width="100%" height="500px" frameborder="0" >
-                    </iframe>
+                    <img src="../img/timeseries/train_accidents_timeseries.gif" width="100%" height="500px" frameborder="0">
                 </div>
                 <div class="col">
                     <img src="../img/choropleth/innovative/CASINJRR.gif" width="49%" height="500px" frameborder="0">
@@ -141,11 +80,10 @@
                 <!-- Q2 -->
                 <div class="text-center">
                     <h3 class="section-heading">Question 2</h3>
+                    <h4 class="text-muted"><p>While aircraft accidents seem to occur quite frequently globally, do they really happen that much in the U.S.? Even when they occur, how severe are the accidents?</p></h4>
                 </div>
                 <div class="row">
-                    <iframe src="../img/timeseries/aircraft_accidedents_timeseries.html" 
-                        width="100%" height="500px" frameborder="0" >
-                    </iframe>
+                    <img src="../img/timeseries/aircraft_accidents_timeseries.gif" width="100%" height="500px" frameborder="0">
                 </div>
                 <div class="col">
                     <img src="../img/choropleth/innovative/KLDAP.gif" width="49%" height="500px" frameborder="0">
@@ -156,38 +94,58 @@
                 <!-- Q3 -->
                 <div class="text-center">
                     <h3 class="section-heading">Question 3</h3>
+                    <h4 class="text-muted"><p>Is there a rise in aircraft accident frequency as air travel became more available to the public? Additionally, is there a decrease in train accidents once plane travel was popularized?</p></h4>
                 </div>
+
                 <br><br>
 
                 <!-- Q4 -->
                 <div class="text-center">
                     <h3 class="section-heading">Question 4</h3>
+                    <h4 class="text-muted"><p>Are weather conditions related to train accidents?</p></h4>
+                </div>
+                <div class="row">
+                    <iframe src="../img/bubble/Number_of_Train_Accidents_by_State_for_Each_Year.html" 
+                        width="100%" height="500px" frameborder="0">
+                    </iframe>
                 </div>
                 <br><br>
 
                 <!-- Q5 -->
                 <div class="text-center">
                     <h3 class="section-heading">Question 5</h3>
+                    <h4 class="text-muted"><p>How do train and plane accidents differ based on region? What states have the most train and plane accidents?</p></h4>
                 </div>
+
                 <div class="row">
                     <div class="portfolio-caption-heading">Train</div>
                     <iframe src="../img/choropleth/folium_train.html" 
-                        width="100%" height="500px" frameborder="0" >
+                        width="100%" height="500px" frameborder="0">
+                    </iframe>
+                </div>
+                <div class="row">
+                    <img src="../img/combined_train.png" height="500px" frameborder="0">
+                </div>
+                <div class="row">
+                    <iframe src="../img/sunburst/train_damages.html" scrolling="no"
+                        width="100%" height="500px" frameborder="0">
                     </iframe>
                 </div>
 
                 <div class="row">
                     <div class="portfolio-caption-heading">Airplane</div>
                     <iframe src="../img/choropleth/folium_plane.html" 
-                        width="100%" height="500px" frameborder="0" >
+                        width="100%" height="500px" frameborder="0">
                     </iframe>
                 </div>
-                
                 <!-- Linked -->
                 <div class="row">
                     <iframe src="../img/linked_charts/link-plot.html" 
-                        width="100%" height="500px" frameborder="0" >
+                        width="100%" height="500px" frameborder="0">
                     </iframe>
+                </div>
+                <div class="row">
+                    <img src="../img/combined_air.png" height="500px" frameborder="0">
                 </div>
 
             </div>
