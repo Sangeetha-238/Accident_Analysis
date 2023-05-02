@@ -2540,12 +2540,9 @@ vertical-align: -.125em;
   .slider-img:not(:first-child) {
     display: none;
   }
-  body {
-    background: rgb(207, 201, 201);
-    
-  }
 </style>
 <body>
+
   <ul class="header">
     <!-- link back to homepage -->
     <li><a href="../../index.html">Main</a></li>
@@ -2591,12 +2588,12 @@ vertical-align: -.125em;
     
     </ul>
 <div class="container">
-<img class="slider-img" src="./assets/Airplanecrash.jpeg" alt="airplane" width="100%" height="800px">
-<img class="slider-img" src="./assets/traincrash.jpeg" alt="train" width="100%" height="800px">
-<img class="slider-img" src="./assets/air1.jpeg" alt="train" width="100%" height="800px">
-<img class="slider-img" src="./assets/train1.jpeg" alt="train" width="100%" height="800px">
-<img class="slider-img" src="./assets/air2.jpeg" alt="train" width="100%" height="800px">
-<img class="slider-img" src="./assets/train2.jpeg" alt="train" width="100%" height="800px">
+<img class="slider-img" src="./assets/Airplanecrash.jpeg" alt="airplane" width="100%" height="700px">
+<img class="slider-img" src="./assets/traincrash.jpeg" alt="train" width="100%" height="700px">
+<img class="slider-img" src="./assets/air1.jpeg" alt="train" width="100%" height="700px">
+<img class="slider-img" src="./assets/train1.jpeg" alt="train" width="100%" height="700px">
+<img class="slider-img" src="./assets/air2.jpeg" alt="train" width="100%" height="700px">
+<img class="slider-img" src="./assets/train2.jpeg" alt="train" width="100%" height="700px">
 <script>
   let currentSlide = 0;
   const slides = document.getElementsByClassName("slider-img");
@@ -2607,23 +2604,32 @@ vertical-align: -.125em;
   }, 2000);
 </script>
 </div>
-<div class="centered"><b>AIRCRASH AND TRAIN ACCIDENT ANALYSIS</b></div>
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-full toc-left">
+<div class="centered"><b>Aircrash and Train Accident Analysis</b></div>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  
-</div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-</div>
-<main class="content column-page" id="quarto-document-content">
 
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Air crash and Train Accident Analysis.</h1>
+</div>
 
 
 
 <div class="quarto-title-meta">
 
     
-
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 28, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -2631,56 +2637,9 @@ vertical-align: -.125em;
 
 </header>
 
-<h2 style="text-align: center;">Introduction and Motivation</h2>
 <p>One cloudy day, hundreds of passengers were waiting at the airport for their delayed flight. When the weather finally cleared, the crowd was relieved to board their plane. Some were in a hurry to make it to their business meetings, while others were excited to see their families. Meanwhile, thousands boarded a train to travel to their homes, favorite vacation spots, or to visit friends and family. However, no one had any idea that they would end up somewhere very different from where they intended.</p>
 <p>Unfortunately, the airplane crashed mid-air, while the train ran off the tracks, resulting in thousands of deaths. The aftermath of these accidents was devastating. The families of the victims were left with a lifetime of grief and sorrow, while the passengers who survived were left with trauma.</p>
-<p>The East Palestine train disaster in Ohio on February 3, 2023, was a devastating event that got widespread media coverage. A train carrying dangerous chemicals derailed, causing a chemical burn that impacted residents and wildlife in the nearby areas. The incident received substantial coverage in the media and garnered attention for more than a month after it occurred.
-</p>
-<p>
-  The intensity of the chemical burn and its impact on the environment and population may have caused the media and political uproar that followed the incident. The mishap also sparked concerns about the possible dangers of moving hazardous products by rail, as well as safety rules and practices.
-</p>
-
-<p>While considering the derailment in Ohio, it is important to remember that other large transportation vehicle accidents occur in the United States. Airplane crashes, in particular, have regularly made national and international headlines. These accidents can range from simple mishaps like two planes nearly colliding on the runway to catastrophic events like the 9/11 terrorist attacks.
-</p>
-<p>
-Because of the possibility for loss of life and the global significance of air travel, aviation disasters frequently garner major media attention. The aviation sector is highly regulated, and any accidents or mishaps are rigorously examined. This information can be used to improve safety procedures and prevent future incidents.
-Incidents involving transportation vehicles, whether rail or air, can have serious consequences for the environment and human life. The media coverage and political reaction to these accidents may raise significant issues about safety legislation and processes, leading to advances in transportation safety.
-</p>
-
-  <h2 style="text-align: center;">About the Data</h2>
-<p>
-  Train accident data from 1975 to 2022 was collected from the Federal Railroad Administration (FRA). Respective metadata encodings that map railroad accident codes to railroad accident types were also gathered from the FRA. The FRA accident data were concatenated into a cumulative CSV file. Similarly, the accident encodings were concatenated into a cumulative CSV file. The two datasets were then merged into one large dataset based on the accident codes, and the data was subsetted for only specific columns of interest (e.g. date, number of casualties, number of injuries, longitude/latitude). With the subsetted data, data conversion was performed to transform the data into a more understandable format. For example, the abbreviated string date representation was converted to a numeric representation (e.g. 75
-1975), fips state encodings were converted to the string state abbreviation, and numeric weather encodings were converted to their respective string representation.
-</p>
-<p>
-  Aircraft accident data from 1908 to 2009 were collected from Kaggle (which was originally hosted on OpenData by Socrata but is no longer publicly available). Since the dataset contained global aircraft accident records, the data was subsetted for only crash incidents that occurred in the U.S. via regex on the location. Additionally, the location column was further split into two city and state columns via regex. It should be noted that not all states had data for plane crashes every year, which may be a result of a lack of data collection or lack of accidents. Regardless, this does create gaps in our data for airplane accidents.
-</p>
-<br>
-
-<div style="margin-left: 10px;">
-  <iframe src = "../img/datatable/train_dt.html"
-    width="100%" height="800px"
-        frameborder="0" ></iframe>
-</div>
-
-<div style="margin-left: 10px;">
-  <iframe src = "../img/datatable/planes_dt.html"
-    width="100%" height="800px"
-        frameborder="0" ></iframe>
-</div>
-
-<div style = "margin-left: 280px;">
-  <iframe src="../img/correlation/correlation.html" 
-      width="100%" height="500px"
-          frameborder="0" ></iframe>
-  </div>
-
-<!-- <div style="margin-left: 10px;">
-  <iframe src = "../img/histogram/Number_of_Train_Accidents_by_State_for_Each_Year.html"
-    width="100%" height="500px"
-        frameborder="0" ></iframe>
-</div> -->
-
+<p>A group of analysts gathered information on the deaths, damages, year, location, and weight of the trains involved in these accidents. The objective of this analysis is to determine the impact of these accidents in terms of the number of fatalities and damages, as well as how often these accidents occur over the years.</p>
 <section id="histogram-plots-to-be-placed" class="level4">
 <h4 class="anchored" data-anchor-id="histogram-plots-to-be-placed">HIstogram plots to be placed</h4>
 <p>Here is the time series line chart for the train dataset, which charts the number of injuries and deaths of railroad crashes dating from 1975 to 2022. The number of injured people greatly outweighs the number of deaths from railroad crashes. High counts of injuries are more often noted in the earlier years, and there is a notable decrease in injuries in the past few years. Part of that could be explained by the COVID-19 pandemic and its halt on travel.</p>
@@ -2689,7 +2648,6 @@ Incidents involving transportation vehicles, whether rail or air, can have serio
 <p>Similarly, this wordcloud depicts the cities most affected by railroad crashes. The magnitude of each city’s name corresponds to the number of crashes in that area. We can see from the word cloud that cities like Texas, Illinois, and Chicago have experienced a significant frequency of railroad crashes. These accidents have clearly had a huge impact on these cities, resulting in severe loss of life and physical damage. It is critical to continue to strengthen railroad safety procedures and regulations in order to avoid such tragedies in the future.</p>
 <p>The folium map shows instances of plane crashes in the U.S. from 1908 to 2009. There appears to be a high number of crashes by the coast, namely New York, Massachusetts, Philadelphia, and California. Oklahoma, North Dakota, and Iowa have the least number of crashes.</p>
 <p>The folium map shows instances of railroad accidents in the U.S. from 1975 to 2022. There appears to be a concentration of accidents in the east and northeast regions, while other states tend to have a similar number of accidents.</p>
-
 </section>
 
 </main>
