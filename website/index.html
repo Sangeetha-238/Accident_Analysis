@@ -822,9 +822,13 @@ function nexttick(func) {
     <!-- link back to homepage -->
     <li><a href="../website/index.html">Main</a></li>
 
+    <li><a href="#intro">Introduction</a></li>
+
     <li><a href="#data">Data</a></li>
 
     <li><a href="#eda">Analysis</a></li>
+
+    <li><a href="#conc">Conclusion</a></li>
     
     <!-- tab without dropdwn  -->
     <li><a href="https://github.com/anly503/spring2023-project-team-15/tree/main/code">Code</a></li>
@@ -897,7 +901,7 @@ function nexttick(func) {
   
 
 </header>
-
+<div id = "intro" >
 <h2 style="text-align: center;">Introduction and Motivation</h2>
 <p>One cloudy day, hundreds of passengers were waiting at the airport for their delayed flight. When the weather finally cleared, the crowd was relieved to board their plane. Some were in a hurry to make it to their business meetings, while others were excited to see their families. Meanwhile, thousands boarded a train to travel to their homes, favorite vacation spots, or to visit friends and family. However, no one had any idea that they would end up somewhere very different from where they intended.</p>
 <p>Unfortunately, the airplane crashed mid-air, while the train ran off the tracks, resulting in thousands of deaths. The aftermath of these accidents was devastating. The families of the victims were left with a lifetime of grief and sorrow, while the passengers who survived were left with trauma.</p>
@@ -913,6 +917,7 @@ function nexttick(func) {
 Because of the possibility for loss of life and the global significance of air travel, aviation disasters frequently garner major media attention. The aviation sector is highly regulated, and any accidents or mishaps are rigorously examined. This information can be used to improve safety procedures and prevent future incidents.
 Incidents involving transportation vehicles, whether rail or air, can have serious consequences for the environment and human life. The media coverage and political reaction to these accidents may raise significant issues about safety legislation and processes, leading to advances in transportation safety.
 </p>
+</div>
 <br>
 <div id = "data">
   <h2 style="text-align: center;">About the Data</h2>
@@ -924,24 +929,26 @@ Incidents involving transportation vehicles, whether rail or air, can have serio
   Aircraft accident data from 1908 to 2009 were collected from Kaggle (which was originally hosted on OpenData by Socrata but is no longer publicly available). Since the dataset contained global aircraft accident records, the data was subsetted for only crash incidents that occurred in the U.S. via regex on the location. Additionally, the location column was further split into two city and state columns via regex. It should be noted that not all states had data for plane crashes every year, which may be a result of a lack of data collection or lack of accidents. Regardless, this does create gaps in our data for airplane accidents.
 </p>
 
+<p class="image-caption"><b>Table 1:</b> The table displays a sample dataset of train accidents that occurred in the United States between 1975 and 2022. The dataset includes columns such as the date of the accident, the state where it occurred, the number of deaths and injuries, and the estimated cost of damages. Additionally, the table contains columns that provide information on the cause of the accidents, including weather conditions on the day of the accident, visibility at the time of the accident, and factors that contributed to the occurrence of the accident. This comprehensive dataset is used for analysis to identify trends and patterns in train accidents in the United States.</p>
 <div style="margin-left: 10px;">
   <iframe src = "../img/datatable/train_dt.html"
     width="100%" height="800px" 
         frameborder="0" style="padding: 0; margin: 0;"></iframe>
 </div>
 <div  style="margin-left: 6%;margin-right: 6%;">
-<p class="image-caption"><b>Table 1:</b> The table displays a sample dataset of train accidents that occurred in the United States between 1975 and 2022. The dataset includes columns such as the date of the accident, the state where it occurred, the number of deaths and injuries, and the estimated cost of damages. Additionally, the table contains columns that provide information on the cause of the accidents, including weather conditions on the day of the accident, visibility at the time of the accident, and factors that contributed to the occurrence of the accident. This comprehensive dataset is used for analysis to identify trends and patterns in train accidents in the United States.</p>
+
 </div>
+<p><b>Table 2:</b> The table presents a comprehensive dataset of aircraft crashes that occurred in the United States from 1908 to 2009. The dataset includes key information such as the date of the crash, the city and state where it occurred, the number of deaths onboard the aircraft, the number of ground deaths, and the name of the operator involved in the crash. This dataset can provide valuable insights for analysts to identify patterns and factors that contribute to aircraft accidents.</p>
 <div style="margin-left: 10px;">
         <iframe src = "../img/datatable/planes_dt.html"
     width="100%" height="800px"
         frameborder="0" style="padding: 0; margin: 0;" ></iframe>
 </div>
 <div  style="margin-left: 7%;margin-right: 7%;">
-<p><b>Table 2:</b> The table presents a comprehensive dataset of aircraft crashes that occurred in the United States from 1908 to 2009. The dataset includes key information such as the date of the crash, the city and state where it occurred, the number of deaths onboard the aircraft, the number of ground deaths, and the name of the operator involved in the crash. This dataset can provide valuable insights for analysts to identify patterns and factors that contribute to aircraft accidents.</p>
+
 </div>
 
-<p> To Understand the strength and the direction of the linear relationship between the variables in the data , the correlation plot is plotted in th eplot below we can see that, the strongest correlation is between "Aboard" and "Fatalities" with a coefficient of 0.645580, indicating a positive relationship. This means that as the number of people aboard an aircraft increases, so does the likelihood of fatalities in case of an accident. The correlation between "Fatalities" and "Ground" is 0.116703, which suggests a weaker positive relationship. This means that as the number of fatalities in an aircraft accident increases, so does the likelihood of ground fatalities or damage. The correlation coefficient between "Aboard" and "Ground" is the weakest at 0.067474, indicating a very weak positive relationship. This suggests that there is very little correlation between the number of people aboard an aircraft and the likelihood of ground fatalities or damage.</p>
+<p> To understand the strength and the direction of the linear relationship between the variables in the data , the correlation plot is plotted in th eplot below we can see that, the strongest correlation is between "Aboard" and "Fatalities" with a coefficient of 0.645580, indicating a positive relationship. This means that as the number of people aboard an aircraft increases, so does the likelihood of fatalities in case of an accident. The correlation between "Fatalities" and "Ground" is 0.116703, which suggests a weaker positive relationship. This means that as the number of fatalities in an aircraft accident increases, so does the likelihood of ground fatalities or damage. The correlation coefficient between "Aboard" and "Ground" is the weakest at 0.067474, indicating a very weak positive relationship. This suggests that there is very little correlation between the number of people aboard an aircraft and the likelihood of ground fatalities or damage.</p>
 
 <p>And for the train data we can see that there is a positive correlation between Fatalities and Damage (0.184915). This indicates that there is a relationship between the number of fatalities in a train accident and the amount of damage caused by the accident. There is also a positive correlation between Speed and TONS (0.193462), suggesting that accidents involving higher train speeds are more likely to involve higher train weights. Additionally, there is a negative correlation between TONS and Fatalities (-0.013589), indicating that accidents involving heavier trains are not necessarily more deadly. Finally, the correlation coefficients between the other variables are close to zero, indicating a weak or no correlation between those variables. For example, there is almost no correlation between Temperature and any of the other variables.</p>
 <br>
@@ -1067,6 +1074,12 @@ Incidents involving transportation vehicles, whether rail or air, can have serio
   <p><b>Figure 12:</b> The linked plot displays the total number of aircraft crashes and fatalities for each state in the United States over the years. The linked plot allows users to interact with it, providing a unique and dynamic way of visualizing the relationship between the number of crashes and fatalities across different states over time. The plot shows that Alaska has the highest number of total crashes.</p>
   </div>
 </div>
+
+<div id = "conc" >
+  <h2 style="text-align: center;">Conclusion</h2>
+
+</div>
+
 </main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
