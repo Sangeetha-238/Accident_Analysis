@@ -1,0 +1,66 @@
+---
+title: "histogram"
+format: html
+editor: visual
+---
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE}
+library(flipbookr)
+library(tidyverse)
+library(ggplot2)
+library(forecast)
+library(astsa) 
+library(xts)
+library(tseries)
+library(fpp2)
+library(fma)
+library(lubridate)
+library(tidyverse)
+library(TSstudio)
+library(quantmod)
+library(tidyquant)
+library(plotly)
+library(ggplot2)
+require(gridExtra)
+library(gganimate)
+library(hrbrthemes)
+options(dplyr.summarise.inform = FALSE)
+```
+
+```{r}
+library(plotly)
+df <- read.csv("../data/airplanes_final.csv")
+
+
+df$Date<-as.Date(df$Date,"%m/%d/%Y")
+
+# Group the data by operator and count the number of crashes
+type_crashes <- aggregate(Date ~ Operator, data = df, FUN = length)
+colnames(type_crashes) <- c('Operator', 'count')
+
+# Sort the data by count in descending order
+type_crashes <- type_crashes[order(type_crashes$count, decreasing = TRUE), ]
+
+# Get the top 5 aircraft types with the most flight crashes
+top_10_types <- type_crashes[1:10, ]
+top_10_types
+
+
+top_10_types %>%
+  arrange(count) %>%    # First sort by val. This sort the dataframe but NOT the factor levels
+  mutate(name=factor(Operator, levels=Operator)) %>%   # This trick update the factor levels
+  ggplot( aes(x=name, y=count)) +
+    geom_segment( aes(xend=name, yend=0), color = "#9e99a6") +
+    geom_point( size = 7.5, color="#644d85") +
+    geom_text(aes(label = count), color = "white", size = 3)+
+    coord_flip() +
+    theme_bw()+
+    ylab("Number of Crashes")+
+    xlab("")+
+    ggtitle("Top 10 Aircraft Types with Most Flight Crashes") +
+    transition_states(year, transition_length = 10, state_length = 1)
+
+
+
+```
+

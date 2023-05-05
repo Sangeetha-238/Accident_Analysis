@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>ANLY503 Project</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#intro">Introduction</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#analysis">Analysis</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#conc">Conclusions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./pages/methods.html">Data &<br>Methods</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./pages/code.html">Code</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-heading text-uppercase"><b>Transportation Analysis</b></div>
+                <div class="masthead-subheading">Train and Airplane Accidents</div>
+            </div>
+        </header>
+        <!-- Intro-->
+        <section class="page-section" id="intro">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Introduction</h2>
+                </div>
+                <div class="row">
+                    With the East Palestine train derailment in Ohio on February 3, 2023, footage of the chemical burn and its aftermath on the residents and wildlife received significant media attention, lasting over a month since the incident. Considering the media and political stir that followed, we were curious why this incident in particular gained so much publicity.
+                </div>
+                <br>
+                <div class="row">
+                    While considering the derailment in Ohio, we also wondered if other large transportation vehicle accidents occurred in the U.S., which led us to also consider airplane accidents. Globally, airplane incidents seem to catch mainstream headlines quite frequently, from as "minor" as two planes nearly colliding on the runway to as devastating as a 747 crashing.
+                </div>
+            </div>
+        </section>
+        <!-- Analysis-->
+        <section class="page-section bg-light" id="analysis">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading">Analysis</h2>
+                </div>
+                <br><br>
+
+                <!-- Q1 -->
+                <div class="text-center">
+                    <h3 class="section-heading">Question 1</h3>
+                    <h4 class="text-muted"><p>Did the Ohio train derailment gain so much traction because train derailments in general are exceedingly rare? Or was it because this derailment in particular had noticeably devastating effects?</p></h4>
+                </div>
+                <div class="col">
+                    <img src="../img/choropleth/innovative/CASINJRR.gif" width="49%" height="500px" frameborder="0">
+                    <img src="../img/choropleth/innovative/CASKLDRR.gif" width="49%" height="500px" frameborder="0">
+                </div>
+                <br><br>
+
+                <!-- Q2 -->
+                <div class="text-center">
+                    <h3 class="section-heading">Question 2</h3>
+                    <h4 class="text-muted"><p>While aircraft accidents seem to occur quite frequently globally, do they really happen that much in the U.S.? Even when they occur, how severe are the accidents?</p></h4>
+                </div>
+                <div class="col">
+                    <img src="../img/choropleth/innovative/KLDAP.gif" width="49%" height="500px" frameborder="0">
+                    <img src="../img/choropleth/innovative/GKLDAP.gif" width="49%" height="500px" frameborder="0">
+                </div>
+                <br><br>
+
+                <!-- Q3 -->
+                <div class="text-center">
+                    <h3 class="section-heading">Question 3</h3>
+                    <h4 class="text-muted"><p>Is there a rise in aircraft accident frequency as air travel became more available to the public? Additionally, is there a decrease in train accidents once plane travel was popularized?</p></h4>
+                </div>
+                <div class="row">
+                    <img src="../img/timeseries/train_accidents_timeseries.gif" width="100%" height="500px" frameborder="0">
+                </div>
+                <div class="row">
+                    <img src="../img/timeseries/aircraft_accidents_timeseries.gif" width="100%" height="500px" frameborder="0">
+                </div>
+
+                <br><br>
+
+                <!-- Q4 -->
+                <div class="text-center">
+                    <h3 class="section-heading">Question 4</h3>
+                    <h4 class="text-muted"><p>Are weather conditions related to train accidents? What types of train accidents are most common? What types of airplane accidents are most common?</p></h4>
+                </div>
+                <div class="row">
+                    <iframe src="../img/bubble/Number_of_Train_Accidents_by_State_for_Each_Year.html" 
+                        width="100%" height="500px" frameborder="0">
+                    </iframe>
+                </div>
+                <div class="row">
+                    <iframe src="../img/sankey/train_accidents_type.html" 
+                        width="100%" height="800px" frameborder="0">
+                    </iframe>
+                </div>
+                <div class="row">
+                    <iframe src="../img/lollipop/top_1_operators.png" 
+                        width="100%" height="900px" frameborder="0">
+                    </iframe>
+                </div>
+                <br><br>
+
+                <!-- Q5 -->
+                <div class="text-center">
+                    <h3 class="section-heading">Question 5</h3>
+                    <h4 class="text-muted"><p>How do train and plane accidents differ based on region? What states have the most train and plane accidents?</p></h4>
+                </div>
+
+                <div class="row">
+                    <div class="portfolio-caption-heading">Train</div>
+                    <iframe src="../img/choropleth/folium_train.html" 
+                        width="100%" height="500px" frameborder="0">
+                    </iframe>
+                </div>
+                <div class="row">
+                    <img src="../img/combined_train.png" height="500px" frameborder="0">
+                </div>
+                <div class="row">
+                    <iframe src="../img/sunburst/train_damages.html" scrolling="no"
+                        width="100%" height="1000px" frameborder="0">
+                    </iframe>
+                </div>
+
+                <div class="row">
+                    <div class="portfolio-caption-heading">Airplane</div>
+                    <iframe src="../img/choropleth/folium_plane.html" 
+                        width="100%" height="500px" frameborder="0">
+                    </iframe>
+                </div>
+                <!-- Linked -->
+                <div class="row">
+                    <iframe src="../img/linked_charts/link-plot.html" scrolling="no"
+                        width="100%" height="500px" frameborder="0">
+                    </iframe>
+                </div>
+                <div class="row">
+                    <img src="../img/combined_air.png" height="500px" frameborder="0">
+                </div>
+
+            </div>
+        </section>
+        <!-- Conclusion-->
+        <section class="page-section bg-light" id="conc">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Conclusion</h2>
+                </div>
+                <div class="row">
+                    Train accidents that lead to death and injuries seem to be a relatively regular occurrence throughout the U.S. As such, it seems that the East Palestine accident gained so much attention not because of the rarity of train derailments but perhaps because of the incidents following the accident and the chemical burnoff.
+                </div>
+                <br>
+                <div class="row">
+                    As the lack of yearly data for each state suggests, airplane accidents that lead to onboard and ground deaths seem to be quite infrequent. When they occur, expectedly, there are great casualties onboard and on the ground.
+                </div>
+                <br>
+                <div class="row">
+                    Airplane accidents did result in more fatalities once commercial air travel became more popular, with onboard fatalities generally being greater than on ground fatalities. One notable exception is Sept. 11, 2001, when the ground deaths skyrocketed due to the terrorist attacks. For train accidents, injuries outweigh the fatalities over time. Additionally, there is no noticeable consistent decrease in injuries or deaths apart from around 2019 onwards. This could partly be explained by COVID-19’s halt on transportation.
+                </div>
+                <br>
+                <div class="row">
+                    Weather appears to have a certain impact on train accidents. More damage seems to occur when the temperature is below 40 degrees Fahrenheit and cloudy. There is relatively more damage during snowfall. Rain also has a slight effect on accidents.
+                </div>
+                <br>
+                <div class="row">
+                    The states that are most affected by air crashes and train accidents are Texas, Illinois, New York, and California.
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; ANLY503 Spring 2023 Group 15</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="https://github.com/anly503/spring2023-project-team-15" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
