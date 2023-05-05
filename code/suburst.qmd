@@ -1,5 +1,5 @@
 ---
-title: "radar"
+title: "sunburst"
 format: html
 editor: visual
 ---
@@ -23,7 +23,7 @@ library(plotly)
 library(ggplot2)
 require(gridExtra)
 library(gganimate)
-library(ggsunburst)
+library(sunburstR)
 options(dplyr.summarise.inform = FALSE)
 ```
 
@@ -50,32 +50,31 @@ damage_data <- damage_data %>%
     TRUE ~ "Other"
   ))
 
-damage_data <- data.frame(region = damage_data$region,state = damage_data$State,damage =  damage_data$damage)
+damage_data <- data.frame(region = damage_data$region, state = damage_data$State, damage =  damage_data$damage)
 damage_data$region_state <- paste(damage_data$region, damage_data$state, sep = "-")
-data <- data.frame(seuence = damage_data$region_state, damage =  damage_data$damage)
+data <- data.frame(sequence = damage_data$region_state, damage =  damage_data$damage)
 
 
 sn = sunburst(
   data,
   withD3 = TRUE,
-  colors = c("#89375F", "#CE5959","#BACDDB", "#9e9ac8", "#DE3163","#A7D2CB","#F2D388","#C98474"),
+  colors = c("#40826D", "#40B5AD","#9FE2BF", "#009E60","#A7D2CB","#93C572","#C1E1C1","#ECFFDC","#4CBB17"),
   count = TRUE, # add count just for demonstration
-  width = 1400, height = 600,
-  legendOrder = unique(unlist(strsplit(as.character(data$V1),"-")))
-  
+  width = 600, height = 600,
+  legendOrder = unique(unlist(strsplit(as.character(data$V1), "-")))
 )
-
 
 # add title and source information with custom font size and style
 sn <- htmlwidgets::prependContent(sn, 
                                   htmltools::h3("Damage Cause by Train Accidents 1957-2022", 
-                                                style = "font-size: 20px;font-family: Arial; font-weight: bold; text-align: center;"),
+                                                style = "font-size: 20px;font-family: Arial; font-weight: bold; text-align: left;"),
                                   htmltools::h4("Source: Federal Railroad Administration", 
-                                                style = "font-size: 16px;font-family: Arial; font-style: italic; text-align: center;")
+                                                style = "font-size: 16px;font-family: Arial; font-style: italic; text-align: left;")
 )
 
 # display sunburst plot
 sn
+
 
 
 

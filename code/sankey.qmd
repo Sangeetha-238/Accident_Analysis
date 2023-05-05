@@ -24,6 +24,7 @@ library(ggplot2)
 require(gridExtra)
 library(gganimate)
 library(networkD3)
+library(ggforce)
 options(dplyr.summarise.inform = FALSE)
 ```
 
@@ -44,26 +45,31 @@ nodes <- data.frame(name=c(as.character(data$Cause), as.character(data$Descripti
 data$IDsource=match(data$Cause, nodes$name)-1 
 data$IDtarget=match(data$Description, nodes$name)-1
 ColourScal ='d3.scaleOrdinal() .range(["#003f5c", "#2f4b7c", "#665191", "#a05195", "#d45087", "#f95d6a", "#ff7c43", "#ffa600"])'
+
+ColourScal = 'd3.scaleOrdinal().range(["#f7fcf5", "#e5f5e0", "#c7e9c0", "#a1d99b", "#74c476", "#41ab5d", "#238b45", "#005a32"])'
+
+
 # Create links
 sankey <- sankeyNetwork(data, Nodes = nodes,
                         Source = "IDsource", Target = "IDtarget",
                         Value = "Count", NodeID = "name",
                         sinksRight = FALSE, colourScale = ColourScal,
-                        nodeWidth = 40, fontSize = 15, nodePadding = 20,width = 1700, height = 600)
+                        nodeWidth = 40, fontSize = 15, nodePadding = 20,width = 800, height = 600)
+
+
+
+
 # Add title using htmlwidgets
 sankey_title <- htmltools::tags$h3("Types of train accidents and their subcategories", 
-                                                style = "font-size: 20px;font-family: Arial; font-weight: bold; text-align: center;")
+                                   style = "font-size: 20px; font-family: Arial; font-weight: bold; text-align: left;")
 sankey_subtitle <- htmltools::tags$h4("Source: Federal Railroad Administration", 
-                                                style = "font-size: 16px;font-family: Arial; font-style: italic; text-align: center;")
-sankey_with_title <- htmlwidgets::prependContent(sankey, sankey_title,sankey_subtitle)
+                                      style = "font-size: 16px; font-family: Arial; font-style: italic; text-align: left;")
+sankey_with_title <- htmlwidgets::prependContent(sankey, sankey_title, sankey_subtitle)
 
-# Display the plot with title
 sankey_with_title
-
 htmlwidgets::saveWidget(
                 widget = sankey_with_title,
                 file = "../img/sankey/train_accidents_type.html", #the path & file name
                 selfcontained = TRUE
                 )
 ```
-
