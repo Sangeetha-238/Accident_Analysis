@@ -21,9 +21,8 @@ In both cases, we were interested in understanding the following:
 1. Did the Ohio train derailment gain so much traction because train derailments in general are exceedingly rare? Or was it because this derailment in particular had noticeably devastating effects?
 2. While aircraft accidents seem to occur quite frequently globally, do they really happen that much in the U.S.? Even when they occur, how severe are the accidents?
 3. Is there a rise in aircraft accident frequency as air travel became more available to the public? Additionally, is there a decrease in train accidents once plane travel was popularized?
-4. How do train and plane accidents differ based on region?
-5. Are weather conditions related to train accidents?
-6. What States have the most train and plane accidents? What are the corresponding Damage/Fatalities?
+4. Do external factors, such as weather conditions, affect train accidents? Do certain train accident categories occur more frequently? Are there specific airplanes that are more often involved in accidents?
+5. What States have the most train and plane accidents? What are the corresponding casualties?
 
 ## Methodology
 Train accident data from 1975 to 2022 was collected from the Federal Railroad Administration (FRA). Respective metadata encodings that maps railroad accident codes to railroad accident types were also gathered from the FRA. The FRA accident data were concatenated into a cumulative CSV file. Similarly, the accidents encodings were concatenated into a cumulative CSV file. The two datasets were then merged into one large dataset based on the accident codes, and the data was subsetted for only specific columns of interest (e.g. date, number of casualties, number of injuries, longitude/latitude). With the subsetted data, data conversion was performed to transform the data into a more understandable format. For example, the abbreviated string date representation was converted to a numeric representation (e.g. 75 ⇒ 1975), fips state encodings were converted to the string state abbreviation, and numeric weather encodings were converted to their respective string representation.
