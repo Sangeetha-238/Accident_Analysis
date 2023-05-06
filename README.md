@@ -116,7 +116,7 @@ The study looked into railroad and airplane accidents in the United States. The 
     * `pio.write_image`: saves interactive plots to html file
     * `corr` : Calculates the correlation between the columns of a dataframe
   
-* `code/Histogram.ipynb`
+* `code/histograms.ipynb`
   * **Trains:** Created 6 interactive histograms using plotly for train accidents in the United States from 1975 to 2022. The histograms provide insights into the number of train accidents by state and year, top causes of train accidents for all states, top causes of train accidents for region, percentage of train accidents by type, number of train accidents by weather condition, and number of train accidents by type of train. Used facet, slider and dropdown menus in Plotly charts which make the charts much more interactive and easier to understand. 
   * **Airplanes:** Created 4 interactive histograms using plotly for airplanes accidents in the United States from 1908 to 2009. The histograms provide insights into the number of airplane accidents by state and year, number of flight crashs by year, top 5 pperators with the most flight crashes, and fatalities in flight crashes. Used facet, slider and dropdown menus in Plotly charts which make the charts much more interactive and easier to understand. 
   * Key functions:
@@ -129,3 +129,41 @@ The study looked into railroad and airplane accidents in the United States. The 
   * Key functions:
     * `create_dt`: creates interactive plotly datatables
     * `export_dt`: exports datatable objects to html
+    
+* `code/bubblechart.ipynb`
+  * Created interactive bubble chart plotly for the trains accidents in United States from 1970 to 2022. Th bubble chart provides insights into the damage caused by weather and temperature. 
+  * Key functions:
+    * `px.scatter`: creates interactive plotly scatter
+    * `write_html`:  the function takes a Plotly interative plot exports to html.
+    
+* `code/line_graph.qmd`
+  * Created animated time series plot for train and aircraft accidents in United States. The line plot provides insights into the nuber of accidents.
+  * Key functions:
+    * `ggplot_line`: creates line graph
+    * `animation`:  creates animatiob for the plot.
+    *`anim_save`: exports the plot in gif.
+    
+* `code/link-plot.ipynb`
+  * Created interactive link plot for the aircarft crashes and the number of fatalities in United States.
+  * Key functions:
+    * `mark_line`: creates line plot from altair package
+    * `mark_bar`: creates bar plot from altair package
+    
+* `code/lollipop.qmd`
+  * Created interactive lollipop plot for the aircraft crashes in United States. The lollipop chart provides insights into the top 10 operators during the aircraft.
+  * Key functions:
+    * `geom_line`: creates line from the ggplot
+    * `geom_point`: creates point from the ggplot
+    * `saveWidget`: saves the interactive plot to html file.
+
+* `code/sankey.qmd`
+  * Created interactive sankey plot for the train accidents in United States. The sankey plot provides insights of the causes and subcategories of the cause of train accidents
+  * Key functions:
+    * `sankeyNetwork`: creates sankey plot, used networkD3.
+    * `saveWidget`: saves the interactive plot to html file.
+
+* `code/sunburst.qmd`
+  * Created interactive sunburst plot for the train accidents in United States. The sunburst plot provides insights of the region and state damage of train accidents.
+  * Key functions:
+    * `sunburst`: creates sunburst plot from sunurstR package.
+    * `saveWidget`: saves the interactive plot to html file.
