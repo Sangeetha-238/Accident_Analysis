@@ -826,7 +826,7 @@ function nexttick(func) {
 
     <li><a href="#data">Data</a></li>
 
-    <li><a href="#eda">Analysis</a></li>
+    <li><a href="#analysis">Analysis</a></li>
 
     <li><a href="#conc">Conclusion</a></li>
     
@@ -920,17 +920,18 @@ function nexttick(func) {
 
 </div>
 <br>
-<div id = "data">
+<br id = "data">
   <h2 style="text-align: center;">About the Data</h2>
 <p>
-  Train accident data from 1975 to 2022 was collected from the Federal Railroad Administration (FRA). Respective metadata encodings that map railroad accident codes to railroad accident types were also gathered from the FRA. The FRA accident data were concatenated into a cumulative CSV file. Similarly, the accident encodings were concatenated into a cumulative CSV file. The two datasets were then merged into one large dataset based on the accident codes, and the data was subsetted for only specific columns of interest (e.g. date, number of casualties, number of injuries, longitude/latitude). With the subsetted data, data conversion was performed to transform the data into a more understandable format. For example, the abbreviated string date representation was converted to a numeric representation (e.g. 75
-1975), fips state encodings were converted to the string state abbreviation, and numeric weather encodings were converted to their respective string representation.
+  Train accident data from 1975 to 2022 was collected from the Federal Railroad Administration (FRA). Respective metadata encodings that map railroad accident codes to railroad accident types were also gathered from the FRA. The FRA accident data were concatenated into a cumulative CSV file. Similarly, the accident encodings were concatenated into a cumulative CSV file. The two datasets were then merged into one large dataset based on the accident codes, and the data was subsetted for only specific columns of interest (e.g. date, number of casualties, number of injuries, longitude/latitude). With the subsetted data, data conversion was performed to transform the data into a more understandable format. For example, the abbreviated string date representation was converted to a numeric representation (e.g. 75 => 1975), FIPS state codes were converted to the string state abbreviation, and numeric weather encodings were converted to their respective string representation.
 </p>
 <p>
-  Aircraft accident data from 1908 to 2009 were collected from Kaggle (which was originally hosted on OpenData by Socrata but is no longer publicly available). Since the dataset contained global aircraft accident records, the data was subsetted for only crash incidents that occurred in the U.S. via regex on the location. Additionally, the location column was further split into two city and state columns via regex. It should be noted that not all states had data for plane crashes every year, which may be a result of a lack of data collection or lack of accidents. Regardless, this does create gaps in our data for airplane accidents.
+  Aircraft accident data from 1908 to 2009 were collected from Kaggle. Since the dataset contained global aircraft accident records, the data was subsetted for only crash incidents that occurred in the U.S. via regex on the location. Additionally, the location column was further split into two city and state columns via regex. It should be noted that not all states had data for plane crashes every year, which may be a result of a lack of data collection or lack of accidents. Regardless, this does create gaps in our data for airplane accidents. Additionally, the data was originally hosted on OpenData by Socrata but is no longer publicly available.
 </p>
 
-<p class="image-caption"><b>Table 1:</b> The table displays a sample dataset of train accidents that occurred in the United States between 1975 and 2022. The dataset includes columns such as the date of the accident, the state where it occurred, the number of deaths and injuries, and the estimated cost of damages. Additionally, the table contains columns that provide information on the cause of the accidents, including weather conditions on the day of the accident, visibility at the time of the accident, and factors that contributed to the occurrence of the accident. This comprehensive dataset is used for analysis to identify trends and patterns in train accidents in the United States.</p>
+<br></br>
+
+<p class="image-caption"><b>Table 1:</b> The table displays the first 1000 samples from a dataset of train accidents that occurred in the United States between 1975 and 2022. The dataset includes columns such as the date of the accident, the state where it occurred, the number of deaths and injuries, and the estimated cost of damages. Additionally, the table contains columns that provide information on the cause of the accidents, including weather conditions on the day of the accident, visibility at the time of the accident, and factors that contributed to the occurrence of the accident. This comprehensive dataset is used for analysis to identify trends and patterns in train accidents in the United States.</p>
 <div style="margin-left: 10px;">
   <iframe src = "../img/datatable/train_dt.html"
     width="100%" height="800px" 
@@ -939,7 +940,7 @@ function nexttick(func) {
 <div  style="margin-left: 6%;margin-right: 6%;">
 
 </div>
-<p><b>Table 2:</b> The table presents a comprehensive dataset of aircraft crashes that occurred in the United States from 1908 to 2009. The dataset includes key information such as the date of the crash, the city and state where it occurred, the number of deaths onboard the aircraft, the number of ground deaths, and the name of the operator involved in the crash. This dataset can provide valuable insights for analysts to identify patterns and factors that contribute to aircraft accidents.</p>
+<p><b>Table 2:</b> The table presents the first 1000 samples from a comprehensive dataset of aircraft crashes that occurred in the United States from 1908 to 2009. The dataset includes key information such as the date of the crash, the city and state where it occurred, the number of deaths onboard the aircraft, the number of ground deaths, and the name of the operator involved in the crash. This dataset can provide valuable insights for analysts to identify patterns and factors that contribute to aircraft accidents.</p>
 <div style="margin-left: 10px;">
         <iframe src = "../img/datatable/planes_dt.html"
     width="100%" height="800px"
@@ -949,73 +950,72 @@ function nexttick(func) {
 
 </div>
 
-<p> To understand the strength and the direction of the linear relationship between the variables in the data , the correlation plot is plotted in th eplot below we can see that, the strongest correlation is between "Aboard" and "Fatalities" with a coefficient of 0.645580, indicating a positive relationship. This means that as the number of people aboard an aircraft increases, so does the likelihood of fatalities in case of an accident. The correlation between "Fatalities" and "Ground" is 0.116703, which suggests a weaker positive relationship. This means that as the number of fatalities in an aircraft accident increases, so does the likelihood of ground fatalities or damage. The correlation coefficient between "Aboard" and "Ground" is the weakest at 0.067474, indicating a very weak positive relationship. This suggests that there is very little correlation between the number of people aboard an aircraft and the likelihood of ground fatalities or damage.</p>
-
-<p>And for the train data we can see that there is a positive correlation between Fatalities and Damage (0.184915). This indicates that there is a relationship between the number of fatalities in a train accident and the amount of damage caused by the accident. There is also a positive correlation between Speed and TONS (0.193462), suggesting that accidents involving higher train speeds are more likely to involve higher train weights. Additionally, there is a negative correlation between TONS and Fatalities (-0.013589), indicating that accidents involving heavier trains are not necessarily more deadly. Finally, the correlation coefficients between the other variables are close to zero, indicating a weak or no correlation between those variables. For example, there is almost no correlation between Temperature and any of the other variables.</p>
-<br>
+<p> To understand the strength and the direction of the linear relationship between the variables in the data, we generated a correlation plot for key variables in the train and airplane datasets.</p>
 <div style = "margin-left: 280px;">
   <iframe src="../img/correlation/correlation.html" 
-      width="100%" height="500px"
+      width="100%" height="500px" scrolling="no"
           frameborder="0" ></iframe>
 </div>
-  <div style = "margin-left: 22%;margin-right: 22%;" >
+<div style = "margin-left: 22%;margin-right: 22%;" >
   <p><b>Figure 1:</b> The figure displays a correlation plot of variables for train and airplane accidents. The plot shows that for train accidents, the variables are not strongly correlated with each other, as indicated by the light color scale. The figure also includes a dropdown button that allows users to switch to an airplane correlation plot. The airplane correlation plot shows that the variables "aboard" and "fatalities" are positively correlated with each other, indicating that an increase in the number of people onboard an airplane is associated with a higher likelihood of fatalities in the event of a crash.</p>
-  </div>
+</div>
+
+<p>For trains in Figure 1, we can see that there is a weak positive correlation between Fatalities and Damage (0.184915). This indicates that there is a relationship between the number of fatalities in a train accident and the amount of damage caused by the accident. There is also a weak positive correlation between Speed and Gross Tonnage (0.193462), suggesting that accidents involving higher train speeds are more likely to involve higher train weights. Additionally, there is a very weak negative correlation between Gross Tonnage and Fatalities (-0.013589), indicating that accidents involving heavier trains are not necessarily more deadly. Finally, the correlation coefficients between the other variables are close to zero, indicating a weak or no correlation between those variables. For example, there is almost no correlation between Temperature and any of the other variables.</p>
+
+<p>Additionally, for airplanes, Figure 1 indicates a moderate positive correlation between the total number of people aboard and the number of fatalities aboard with a coefficient of 0.645580. This means that as the number of people aboard an aircraft increases, so does the number of fatalities in case of an accident, which intuitively makes sense. The correlation between the number of fatalities onboard and the number of fatalities on the ground is 0.116703, which suggests a weak positive relationship. This means that as the number of fatalities in an aircraft accident increases, so does the number of ground fatalities. The correlation coefficient between the total number of people onboard and the number of ground fatalities is a very weak positive correlation (0.067474). This suggests that there is almost negligible correlation between the number of people aboard an aircraft and the number of fatalities on the ground.</p>
+
 
 <!-- <div style="margin-left: 10px;">
   <iframe src = "../img/histogram/Number_of_Train_Accidents_by_State_for_Each_Year.html"
     width="100%" height="500px"
         frameborder="0" ></iframe>
 </div> -->
-</div>
-<div id = "eda" >
-<h2 style="text-align: center;">Exploratory Data Analysis</h2>
-<br>
-<br>
-<p>The frequency of train accidents appears to have decreased over time after examining train accident data and illustrating the number of accidents against the year(Figure 2). This could be linked to a fall in the usage of trains and an increase in the accessibility of other modes of transportation, particularly airplanes. Another probable explanation is the advancement of technology, which may have caused accidents in the early years. </p>
+<div id = "analysis" >
+<h2 style="text-align: center;">Analysis</h2>
 <div style = "margin-left: 250px;">
   <img src = "../img/timeseries/train_accidents_timeseries.gif"
     width="800px" height="500px"></img>
 </div>
 <div style = "margin-left: 19%;margin-right: 18%;" >
-  <p><b>Figure 2:</b> The figure displays a time series plot of train accidents in the United States from 1975 to 2022. The plot shows that there has been a general decline in the number of train accidents over the decades since 1975, although there was a peak in the year 2003 when the number of train accidents was relatively high.</p>
-  </div>
-<br>
-<br>
-<p>
-  To support our inference that technical improvements over the years and the ability to take precautions and make predictions have led to a reduction in train accidents, we plotted the frequency of accidents by decade(Figure 3). The graph clearly shows that accidents have decreased over the decades.
-</p>
+  <p><b>Figure 2:</b> The figure displays a time series plot of train accidents in the United States from 1975 to 2022 with the red line indicating the moving average. The plot shows that there has been a general decline in the number of train accidents over the decades since 1975, although there was a peak in 2003 when the number of train accidents was relatively high.</p>
+</div>
+<p>Figure 2 shows that the frequency of train accidents appears to have decreased over time. This decreasing trend could be a result of improvements in technology, which facilitated better infrastructure and safer equipment leading to less accidents over time. On the other hand, this could also be representative of trains becoming a less mainstream mode of transportation for both people and supplies as other modes of transportation, such as cars and airplanes became more publicly available.</p>
+
+<p>We can also approach the number of train accidents from a regional view.</p>
 <div style = "margin-left: 250px;">
   <iframe src = "../img/timeseries/train_Accidents_in_the_US_decade.html"
     width="800px" height="600px"></iframe>
 </div>
 <div style = "margin-left: 20%;margin-right: 20%;" >
-  <p><b>Figure 3:</b> The figure displays a decade-wise stacked bar plot of train accidents in the United States, categorized by region. The plot shows that during the 1970s, the number of train accidents in the United States was very high, and then gradually decreased over the following decades, but increased again in the 2000s. When looking at the regions, the Midwest region had the highest number of train accidents, followed by the South region. </p>
+  <p><b>Figure 3:</b> The figure displays a decade-wise stacked bar plot of train accidents in the United States, categorized by region. The plot shows that during the 1970s, the number of train accidents in the United States was very high, and then gradually decreased over the following decades, but increased again in the 2000s. When looking at the regions, the Midwest region has the highest number of train accidents, followed by the South. </p>
   </div>
-<p>Moving forward, we can analyze which regions have experienced the highest number of accidents and fatalities over the years. It is evident that the Southern region of the US has had a higher frequency of accidents throughout the time period (Figure 4a). While other regions have also experienced accidents, the Eastern region appears to have had more. Additionally, the number of accidents seems to correlate with the number of fatalities. However, it is unclear whether more accidents necessarily mean more monetary damage. </p>
+<p>In Figure 3, we can see similar patterns from Figure 2, where there is a decreasing trend throughout the years with a slight uptick in the 2000s. The Midwest and South, nonetheless, have the most frequent train accidents, which may suggest that the railroad infrastructure in these regions may need renovations. Additionally, there may be differences in safety procedures in different regions, which may also contribute to the higher frequency of accidents.</p>
 
+<p>Moving forward, we can analyze which regions have experienced the highest number of accidents and fatalities over the years.</p>
 <table>
   <tr>
     <td><iframe src="../img/choropleth/folium/folium_train.html"
       width="100%" height="500px"></iframe>
-      <p><b>Figure 4a:</b> The figure displays a folium plot of train accidents in the United States by state and year. Each state is represented by a circle on the map, with the color of the circle corresponding to the number of train accidents that occurred in that state during the selected year. The plot allows users to interact with it, and by clicking on a colored circle, the plot displays the details of the number of deaths and injuries for that state and year. </p></td>
+      <p><b>Figure 4a:</b> The figure displays a folium plot of train accidents in the United States. Each train accident is represented by a marker on the map, which have been clustered together into groups based on their locations. The plot allows users to interact with it, and by zooming into a particular region, details of each incident, such as the number of deaths and injuries, can be seen. There appears to be a concentration of accidents in the east and northeast regions, while other states, generally, tend to have a similar number of accidents.</p></td>
     <td><img src="../img/choropleth/innovative/CASKLDRR.gif" width="600px" height="500px"></img>
-    <p><br><b>Figure 4b:</b> The innovative map shows the motion of train accidents from year to year across the United States. The larger train images represent states with higher numbers of accidents, while smaller train images represent states with fewer accidents. The map provides a unique and interactive way of visualizing the geographic and temporal distribution of train accidents in the US over time.
-</p></td>
+    <p><br><b>Figure 4b:</b> The innovative map shows train deaths from 1975 to 2022. The train images represent the number of deaths in a given state and year, and the icon's size scales accordingly.The map provides a unique way of visualizing the geographic and temporal distribution of train accidents in the U.S. over time. On average, there are less than 30 deaths per state each year. However, there is a noticeable spike in Alabama in 1993.</p></td>
   </tr>
 </table>
+<p>Much like our previous findings, Figure 4a shows that train accidents are centered around mostly the Midwest and South. Unsurprisingly, in these areas with higher frequencies of train accidents, there also seems to be a greater number of train accident deaths (Figure 4b). Somewhat surprisingly, the number of deaths in the West seems to be concentrated around California. This may be a result of California being the second largest exporting state in the U.S. Naturally, this would lead to more incoming and outgoing supply trains, and, from a sheer numbers game, result in greater accidents and subsequently deaths.</p>
 
-<p>To investigate whether the monetary damage is related to the number of accidents, we will examine the monetary damage caused by accidents by region and state. As shown in Figure 5, although the southern region of the United States has experienced more accidents, the Midwest has incurred more damage. Texas has the highest damage, followed closely by Illinois and California. This suggests that the damage tends to be higher when the number of accidents is higher, but it also depends on the magnitude of the accident. </p>
+<p>Considering the number of train accidents, there surely are costs associated with these accidents. As such, we next explore the monetary costs incurred by train accidents for each region and state.</p>
 
 <div style = "margin-left: 330px;">
-  <iframe src="../img/timeseries/train_damages.html" width="800px%" height="750px"></iframe>
+  <iframe src="../img/timeseries/train_damages.html" width="800px%" height="750px" scrolling="no"></iframe>
 </div>
 <div style = "margin-left: 19%;margin-right: 18%;" >
-  <p><b>Figure 5:</b> The sunburst plot displays the distribution of damage cost as a percentage of train accidents in the US, organized by region and state. The innermost ring represents the regions, and the outer ring shows the states within each region. The plot indicates that the majority of damage cost occurred in the Midwest and South regions. The damage cost is measured in billions (G) of dollars.</p>
-  </div>
+  <p><b>Figure 5:</b> The sunburst plot displays the damage costs of train accidents in the U.S., organized by region and state. The innermost ring represents the regions, and the outer ring shows the states within each region. The plot indicates that the majority of damage costs are incurred by accidents in the Midwest and South regions. The damage cost is measured in billions (G) of dollars for the regions and millions (M) of dollars for each state.</p>
+</div>
+
+<p>As shown in Figure 5, the monetary costs from train accidents in the South and Midwest are quite similar. More specifically, Texas makes up the majority of the South's train accident costs, followed closely by Illinois in the Midwest and California in the West. These costs coincide with our previous findings regarding the regions with the highest frequency of train accidents. Considering that Texas doesn't have an astonishingly high number of train accidents, Figure 5 may suggest that Texas experiences accidents that cause more equipment damage, leading to higher incurred costs.</p>
 
 <div style = "margin-left: 250px;">
-  <iframe src="../img/timeseries/train_accidents_type.html" width="800px%" height="750px"></iframe>
+  <iframe src="../img/timeseries/train_accidents_type.html" width="800px%" height="750px" scrolling="no"></iframe>
 </div>
 <div style = "margin-left: 20%;margin-right: 20%;" >
   <p><b>Figure 6:</b> The sankey plot displays the causes of train accidents and their subcategories. The plot shows that derailment is the most common cause of train accidents, with the majority of derailments being caused by track problems, railroad and structure issues, and train operator errors (human factors). </p>
@@ -1069,7 +1069,7 @@ function nexttick(func) {
   </div>
 
 <div>
-<iframe src="../img/linked_charts/link-plot.html" width="100%" height="500px"></iframe>
+<iframe src="../img/linked_charts/link-plot.html" width="100%" height="500px" scrolling="no"></iframe>
 </div>
 <div style = "margin-left: 1%;margin-right: 1%; margin-top: 0;" >
   <p><b>Figure 12:</b> The linked plot displays the total number of aircraft crashes and fatalities for each state in the United States over the years. The linked plot allows users to interact with it, providing a unique and dynamic way of visualizing the relationship between the number of crashes and fatalities across different states over time. The plot shows that Alaska has the highest number of total crashes.</p>
