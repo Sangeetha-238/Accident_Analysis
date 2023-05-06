@@ -905,9 +905,9 @@ function nexttick(func) {
 </header>
 <div id = "intro" >
 <h2 style="text-align: center;">Introduction and Motivation</h2>
-<p>The underlying infrastructure that keeps people and supplies moving across the country is the transportation section. As such, events that halt the transportation sector can have devastating downstream effects. One such incident occurred on February 3, 2023, in East Palestine, Ohio, where a train carrying tankers of chemicals derailed. This derailment gained immediate media traction with coverage of the event spanning nearly two months, which drew many eyes to the existing railroad infrastructure as well as prior train accidents.</p>
+<p>The underlying infrastructure that keeps people and supplies moving across the country is the transportation sector. As such, events that halt the transportation sector can have devastating downstream effects. One such incident occurred on February 3, 2023, in East Palestine, Ohio, where a train carrying tankers of chemicals derailed. This derailment gained immediate media traction with coverage of the event spanning nearly two months, which drew many eyes to the existing railroad infrastructure as well as prior train accidents.</p>
 
-<p>Another large-scale form of transportation are airplanes, which have quickly become the main medium of transporting personnel and supplies. Just in the first two months of 2023, there have been seven cases of runway incursions in the U.S, alluding to the potential risks even within the airline industry. As such, this project aims to explore the safety of transportation sector, namely trains and airplanes.</p>
+<p>Another large-scale form of transportation are airplanes, which have quickly become the main medium of transporting personnel and supplies. Just in the first two months of 2023, there have been seven cases of runway incursions in the U.S., alluding to the potential risks even within the airline industry. As such, this project aims to explore the safety of the transportation sector, namely trains and airplanes.</p>
 
 <p>More specifically, we aim to answer the following research questions:</p>
 
@@ -952,20 +952,6 @@ function nexttick(func) {
 
 </div>
 
-<p> To understand the strength and the direction of the linear relationship between the variables in the data, we generated a correlation plot for key variables in the train and airplane datasets.</p>
-<div style = "margin-left: 280px;">
-  <iframe src="../img/correlation/correlation.html" 
-      width="100%" height="500px" scrolling="no"
-          frameborder="0" ></iframe>
-</div>
-<div style = "margin-left: 22%;margin-right: 22%;" >
-  <p><b>Figure 1:</b> The figure displays a correlation plot of variables for train and airplane accidents. The plot shows that for train accidents, the variables are not strongly correlated with each other, as indicated by the light color scale. The figure also includes a dropdown button that allows users to switch to an airplane correlation plot. The airplane correlation plot shows that the variables "aboard" and "fatalities" are positively correlated with each other, indicating that an increase in the number of people onboard an airplane is associated with a higher likelihood of fatalities in the event of a crash.</p>
-</div>
-
-<p>For trains in Figure 1, we can see that there is a weak positive correlation between Fatalities and Damage (0.184915). This indicates that there is a relationship between the number of fatalities in a train accident and the amount of damage caused by the accident. There is also a weak positive correlation between Speed and Gross Tonnage (0.193462), suggesting that accidents involving higher train speeds are more likely to involve higher train weights. Additionally, there is a very weak negative correlation between Gross Tonnage and Fatalities (-0.013589), indicating that accidents involving heavier trains are not necessarily more deadly. Finally, the correlation coefficients between the other variables are close to zero, indicating a weak or no correlation between those variables. For example, there is almost no correlation between Temperature and any of the other variables.</p>
-
-<p>Additionally, for airplanes, Figure 1 indicates a moderate positive correlation between the total number of people aboard and the number of fatalities aboard with a coefficient of 0.645580. This means that as the number of people aboard an aircraft increases, so does the number of fatalities in case of an accident, which intuitively makes sense. The correlation between the number of fatalities onboard and the number of fatalities on the ground is 0.116703, which suggests a weak positive relationship. This means that as the number of fatalities in an aircraft accident increases, so does the number of ground fatalities. The correlation coefficient between the total number of people onboard and the number of ground fatalities is a very weak positive correlation (0.067474). This suggests that there is almost negligible correlation between the number of people aboard an aircraft and the number of fatalities on the ground.</p>
-
 
 <!-- <div style="margin-left: 10px;">
   <iframe src = "../img/histogram/Number_of_Train_Accidents_by_State_for_Each_Year.html"
@@ -981,7 +967,7 @@ function nexttick(func) {
 <div style = "margin-left: 19%;margin-right: 18%;" >
   <p><b>Figure 2:</b> The figure displays a time series plot of train accidents in the United States from 1975 to 2022 with the red line indicating the moving average. The plot shows that there has been a general decline in the number of train accidents over the decades since 1975, although there was a peak in 2003 when the number of train accidents was relatively high.</p>
 </div>
-<p>Figure 2 shows that the frequency of train accidents appears to have decreased over time. This decreasing trend could be a result of improvements in technology, which facilitated better infrastructure and safer equipment leading to less accidents over time. On the other hand, this could also be representative of trains becoming a less mainstream mode of transportation for both people and supplies as other modes of transportation, such as cars and airplanes became more publicly available.</p>
+<p>Figure 2 shows that the frequency of train accidents appears to have decreased over time. This decreasing trend could be a result of improvements in technology, which facilitated better infrastructure and safer equipment, leading to less accidents over time. On the other hand, this could also be representative of trains becoming a less mainstream mode of transportation for both people and supplies as other modes of transportation, such as cars and airplanes became more publicly available.</p>
 
 <p>We can also approach the number of train accidents from a regional view.</p>
 <div style = "margin-left: 250px;">
@@ -1025,7 +1011,7 @@ function nexttick(func) {
   <p><b>Figure 6:</b> The sankey plot displays the causes of train accidents and their subcategories. The plot shows that derailment is the most common cause of train accidents, with the majority of derailments being caused by track problems, railroad and structure issues, and train operator errors (human factors). </p>
 </div>
     
-<p>Figure 6 shows that derailments are the leading cause of train accidents, and, based on our prior insights from Figure 5, the magnitude of the derailment most likely plays a significant role in the monetary costs and total casualties. Additionally, the primary cause of derailments stem from rack, roadbed, and structured, pointing to the importance of proper maintenance of railroads. The importance of regular inspection of nearby terrain and railroads themselves cannot be overstated, and the plot above further reinforces that upkeep of older infrastructure can help prevent derailments or at least minimize the damages when they do occur. Another major contributor to derailments are train operations related to human factors. As expected of any manual work, human error also plays a role in train accidents, with train operator error being the second leading cause of derailments.</p>
+<p>Figure 6 shows that derailments are the leading cause of train accidents, and, based on our prior insights from Figure 5, the magnitude of the derailment most likely plays a significant role in the monetary costs and total casualties. Additionally, the primary cause of derailments stem from rack-, roadbed-, and structures-related issues, pointing to the importance of proper maintenance of railroads. The importance of regular inspection of nearby terrain and railroads themselves cannot be overstated, and the plot above further reinforces that upkeep of older infrastructure can help prevent derailments or at least minimize the damages when they do occur. Another major contributor to derailments are train operations related to human factors. As expected of any manual work, human error also plays a role in train accidents, with train operator error being the second leading cause of derailments.</p>
 
 
   <p>With the root cause of train accidents considered, we also must examine external factors that may potentially contribute to the frequency of train accidents.</p>
@@ -1049,7 +1035,7 @@ function nexttick(func) {
 <div style = "margin-left: 20%;margin-right: 20%;" >
   <p><b>Figure 8:</b> The figure displays a time series plot of aircraft crashes in the United States from 1908 to 2009 with the red line indicating the moving average. The plot indicates an overall increase in the number of crashes since 1908, with a peak in 1972, followed by a gradual decline.</p>
   </div>
-<p>Figure 8 shows, initially, an increasing trend which reverses after peaking in 1972. Upon further investigation, we learned that airplanes became commercially available in the early 1930s. Additionally, the mid-to-late 20th century marked the increased popularity for air travel as well as the involvement of aircraft in military operations during the Vietnam War. However, over the past few decades, there has been a downward trend in the number of airplane crashes, which may be a result of improvements in the technology, facilities, and infrastructure related to air travel. Additionally, Figure 8, when compared with Figure 2, shows that aircraft accidents occur 2-3 times less frequently than train accidents when considering the overlapping timelines.</p>
+<p>Figure 8 shows, initially, an increasing trend which reverses after peaking in 1972. Upon further investigation, we learned that airplanes became commercially available in the early 1930s. Additionally, the mid-to-late 20th century marked the increased popularity for air travel as well as the involvement of aircraft in military operations during the Vietnam War. However, over the past few decades, there has been a downward trend in the number of airplane crashes, which may be a result of improvements in the technology, facilities, and infrastructure related to air travel. Additionally, Figure 8, when compared with Figure 2, shows that aircraft accidents occur 2-3 times less frequently than train accidents when considering the overlapping dates.</p>
 
 <p>To better understand the turning point in the rise and eventual decline of airplane crashes, we focused our attention between the years 1962 and 1990.</p>
 
@@ -1079,7 +1065,7 @@ function nexttick(func) {
   </tr>
 </table>
 
-<p>Similar to our findings on train accidents from figure 4a, figure 10a shows that a majority of airplane crashes occur in the midwest. Expectedly, airplane crashes that result in greater onboard casualties seem to occur heavily on the coasts (figure 10b), since these would be locations with larger airplanes for longer travel with more passengers onboard. We also found that New York was the most affected state in terms of major aircraft crashes in the East. This coincides with New York being a major transportation zone for immigration and emigration with the presence of major airports, such as JFK and LaGuardia, making it a popular hub for air travel.
+<p>Similar to our findings on train accidents from Figure 4a, Figure 10a shows that a majority of airplane crashes occur in the Midwest. Expectedly, airplane crashes that result in greater onboard casualties seem to occur heavily on the coasts (Figure 10b), since these would be locations with larger airplanes for longer travel with more passengers onboard. We also found that New York was the most affected state in terms of major aircraft crashes in the East. This coincides with New York being a major transportation zone for immigration and emigration with the presence of major airports, such as JFK and LaGuardia, making it a popular hub for air travel.
 </p>
 
 <p>We next wanted to examine which regions had the most fatal airplane crashes.</p>
@@ -1092,7 +1078,7 @@ function nexttick(func) {
   <p><b>Figure 11:</b> The figure displays the major cities affected by aircraft accidents in the United States, as well as the total number of fatalities caused by accidents in each state from 1908 to 2009. The wordcloud shows that New York and California are the most affected states. The bar plot confirms this with California and New York having the highest number of recorded fatalities among all states. </p>
   </div>
 
-<p>Unsurprisingly, figure 11 indicates that regions with frequent airplane crashes has a greater number of fatalities. This suggests that airplane crashes, expectedly, result in significant loss of life. Surprisingly, despite New York having the most occurrences of airplane crashes, California had the greatest number of fatalities from airplane crashes, which suggest that California experienced more devastating accidents. Additionally, our previous insight from figures 10 coincide with the wordcloud, where coastal states, such as New York, California, and Alaska, are the top three states for airplane crashes. These three states also have noticeably greater fatalities than the fourth state (Illinois).</p>
+<p>Unsurprisingly, Figure 11 indicates that regions with frequent airplane crashes has a greater number of fatalities. This suggests that airplane crashes, expectedly, result in significant loss of life. Surprisingly, despite New York having the most occurrences of airplane crashes, California had the greatest number of fatalities from airplane crashes, which suggest that California experienced more devastating accidents. Additionally, our previous insight from Figures 10 coincide with the wordcloud, where coastal states, such as New York, California, and Alaska, are the top three states for airplane crashes. These three states also have noticeably greater fatalities than the fourth state (Illinois).</p>
 
 
 <p>To get a more granular look of the data, we examined the total number of airplane crashes and fatalities by state for each year</p>
@@ -1104,7 +1090,7 @@ function nexttick(func) {
     <p><b>Figure 12:</b> The linked plot displays the total number of aircraft crashes and fatalities for each state in the United States from 1908 to 2009. The linked plot allows users to interact with it, providing a unique and dynamic way of visualizing the relationship between the number of crashes and fatalities across different states over time. The plot shows that Alaska has the highest number of total crashes.</p>
     </div>
 
-<p>According to figure 12, Alaska has the highest number of crashes during this time period, followed by California. However, when considering the fatalities between Alaska and California, California appears to have more frequent and significant accidents, resulting in California having the most fatalities related to aircraft accidents (as seen from figure 11). Another interesting feature is New York. Despite being the state where airplane accidents are third most frequent, the instances are glaringly not as frequent as Alaska or California. Upon inspecting New York individually, we can see a large spike in fatalities in 2001, which coincides with the 9/11 attack. With this particular instance removed, it appears that New York may actually be on-par in terms of accident frequency and fatality as other states.</p>
+<p>According to Figure 12, Alaska has the highest number of crashes during this time period, followed by California. However, when considering the fatalities between Alaska and California, California appears to have more frequent and significant accidents, resulting in California having the most fatalities related to aircraft accidents (as seen from Figure 11). Another interesting feature is New York. Despite being the state where airplane accidents are third most frequent, the instances are glaringly not as frequent as Alaska or California. Upon inspecting New York individually, we can see a large spike in fatalities in 2001, which coincides with the 9/11 attack. With this particular instance removed, it appears that New York may actually be on-par in terms of accident frequency and fatality as other states.</p>
 
 <br></br>
 <div id = "conc" >
