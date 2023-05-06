@@ -832,6 +832,8 @@ function nexttick(func) {
     
     <!-- tab without dropdwn  -->
     <li><a href="https://github.com/anly503/spring2023-project-team-15/tree/main/code">Code</a></li>
+
+    <li><a href="#references">References</a></li>
   </ul>
     
     <!-- tab with dropdwn -->
@@ -1014,6 +1016,9 @@ function nexttick(func) {
 
 <p>As shown in Figure 5, the monetary costs from train accidents in the South and Midwest are quite similar. More specifically, Texas makes up the majority of the South's train accident costs, followed closely by Illinois in the Midwest and California in the West. These costs coincide with our previous findings regarding the regions with the highest frequency of train accidents. Considering that Texas doesn't have an astonishingly high number of train accidents, Figure 5 may suggest that Texas experiences accidents that cause more equipment damage, leading to higher incurred costs.</p>
 
+  <p>To find out the causes of train accidents, our investigation has revealed that derailments are the leading cause of these incidents, and the magnitude of the derailment can play a significant role in the monetary damage incurred. Figure 6 shows that most of the damages are caused by derailments, with the rack, roadbed, and structures being the primary causes in derailment. The importance of proper maintenance and inspection of these critical components cannot be overstated, as they can help prevent derailments and minimize their impact when they do occur. The human factor also plays a role in train accidents, with train operator error being the second leading cause of derailments.</p>
+
+
 <div style = "margin-left: 250px;">
   <iframe src="../img/timeseries/train_accidents_type.html" width="800px%" height="750px" scrolling="no"></iframe>
 </div>
@@ -1021,6 +1026,7 @@ function nexttick(func) {
   <p><b>Figure 6:</b> The sankey plot displays the causes of train accidents and their subcategories. The plot shows that derailment is the most common cause of train accidents, with the majority of derailments being caused by track problems, railroad and structure issues, and train operator errors (human factors). </p>
   </div>
 
+  <p>Our investigation into the causes of train accidents has led us to examine the potential influence of weather and temperature on these incidents. We looked at the relationship between weather conditions, temperature, and the resulting damages caused by train accidents. During clear days, the number of train accidents is higher but during cloudy days, the damages caused by train accidents are more significant, as indicated by the larger bubble size in Figure 7. However, it is essential to note that weather and temperature may not be the sole cause of these incidents, and other factors could be at play as well. </p>
 
 <div style = "margin-left: 180px;">
   <iframe src="../img/bubblechart/bubblechart.html" width="900px" height="500px"></iframe>
@@ -1029,6 +1035,9 @@ function nexttick(func) {
   <p><b>Figure 7:</b> The bubble plot displays the relationship between the damage cost of train accidents and the weather conditions at the time of the accident. The size of the bubble represents the damage cost, while the color and position of the bubble represent the weather condition and temperature range, respectively. The plots indicates that during the cloudy days, modt of the accidental damage occur.</p>
   </div>
 
+<p>After conducting research on train accidents, our curiosity led us to expand our investigation to include aircraft crashes in the United States. We are interested in exploring the various factors that contribute to aviation accidents, as air travel is one of the major forms of transportation nowadays.</p>
+
+<p>As we delved into the data, we came across a time series plot (Figure 8) that showed the number of aircraft crashes in the USA from 1948 to 2009. The graph was fascinating and revealed that the number of accidents varied significantly over the years. We noticed that there were certain periods when the number of accidents was relatively high, such as between 1962 to 1990. Upon further investigation, we learned that this period marked the increased popularity of air travel and the involvement of aircraft in military operations during the Vietnam War. However, we were encouraged to see that over the past few decades, there has been a significant improvement in the facilities and infrastructure related to air travel, as well as advancements in technology. These improvements have contributed to a decline in the number of aircraft crashes in the USA.</p>
 
 <div style = "margin-left: 250px;">
   <img src = "../img/timeseries/aircraft_accidents_timeseries.gif"
@@ -1040,6 +1049,8 @@ function nexttick(func) {
 
 <br>
 
+<p>Upon investigating the time period of 1962 to 1990 and examining the major aircraft crashes that occurred during this time frame, we became interested in understanding the reasons behind these incidents. Our research revealed that a significant number of these crashes were attributed to the US military air force, which sheds light on why the number of crashes during this period was higher. Additionally, we found that air taxi services were the second most common reason for aircraft crashes during this time, as shown in Figure 9b.</p>
+
 <table>
   <tr>
     <td><iframe src="../img/Lolipop/aircraft_1060_1990_timeseries.html"
@@ -1050,6 +1061,8 @@ function nexttick(func) {
   </tr>
 </table>
 
+<p> Our investigation led us to examine the regions and states where these crashes occurred, and we were surprised to find that the western region of the US had a higher number of major aircraft crashes compared to other regions.This is seen in Figure 10a. Furthermore, we found that New York was the most affected state in terms of major aircraft crashes in the West region. The state's airspace was a major transportation hub, and it saw a high number of flights passing through its airspace every day. Moreover, the presence of major airports such as JFK and LaGuardia made it a popular destination for air travel.
+</p>
 
 <table>
   <tr>
@@ -1061,6 +1074,8 @@ function nexttick(func) {
   </tr>
 </table>
 
+<p>Our analysis revealed a strong correlation between the regions with the highest incidence of aircraft crashes and the regions with the highest number of aircraft damages and fatalities.Figure 11, which we analyzed as part of our research, clearly shows that New York, Alaska, and California had the highest number of major aircraft damages. Moreover, the corresponding number of fatalities for each of these states was also ranked highest in California, followed by New York and Alaska.</p>
+
 <div style = "margin-left: 100px;">
   <img src="../img/combined_air.png" width="90%" height="400px"></img>
 </div>
@@ -1068,6 +1083,7 @@ function nexttick(func) {
   <p><b>Figure 11:</b> The figure displays the major cities affected by aircraft accidental damage in the United States, as well as the total number of fatalities caused by these accidents in each state from 1908 to 2009. The wordcloud shows that New York and California are the most affected states, while the bar plot confirms this with California and New York having the highest number of recorded fatalities among all states. </p>
   </div>
 
+<p>After completing our analysis of major aircraft crashes in the United States, we wanted to examine the crash count and corresponding fatalities in each state during the period of 1960-1990. According to Figure 12, Alaska had the highest number of crashes during this time period, with a corresponding high number of fatalities. However, in the past two decades, there has been a decrease in both the number of crashes and fatalities in Alaska. California also had a high number of crashes and fatalities during this time period, with a peak in December 1978 that resulted in a significant number of fatalities. However, like Alaska, there has been a gradual decrease in the number of crashes and fatalities in California past 2 decades.</p>
 <div>
 <iframe src="../img/linked_charts/link-plot.html" width="100%" height="500px" scrolling="no"></iframe>
 </div>
@@ -1081,6 +1097,22 @@ function nexttick(func) {
   <h2 style="text-align: center;">Conclusion</h2>
 
 </div>
+
+
+<div id = "references" >
+  <h2 style="text-align: center;">References</h2>
+  <p>Office of Safety Analysis. (2021). Railroad safety statistics annual report: 2020. Federal Railroad Administration.<a href = "https://safetydata.fra.dot.gov/OfficeofSafety/publicsite/on_the_fly_download.aspx">(Click Here)</a></p>
+  <p>U.S. Department of Transportation. (2011). Rail Equipment Accident/Incident. Federal Railroad Administration.<a href = "https://railroads.dot.gov/forms-guides-publications/guides/618054-rail-equipment-accidentincident-thru-52011-206kb">(Click Here)</a></p>
+  <p>U.S. Department of Transportation. Appendix C: Train Operation Human Factor. Federal Railroad Administration. <a href = " https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-train-operation-human-factor">(Click Herr)</a> </p>
+  <p>U.S. Department of Transportation. Appendix C: Signal and Communication. Federal Railroad Administration. <a href = "https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-signal-and-communication">(Click Here)</a></p>
+  <p>U.S. Department of Transportation. Appendix C: Track, Roadbed, and Structure. Federal Railroad Administration. <a href = "https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-track-roadbed-and-structure">(Click Here)</a></p>
+  <p>U.S. Department of Transportation. Appendix C: Mechanical and Electrical Failures. <a href = "https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-mechanical-and-electrical-failures">(Click Here)</a></p>
+  <p>U.S. Department of Transportation. Appendix C: Miscellaneous Causes Not Otherwise Listed.<a href = "https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-miscellaneous-causes-not-otherwise-listed">(Click Here)</a></p>
+  <p>Sauro Grandi. Airplane Crashes Since 1908. Kaggle. <a href = "https://www.kaggle.com/datasets/saurograndi/airplane-crashes-since-1908">(Click Here)</a></p>
+  <p>Mooney, P. T. Latitude and Longitude for Every Country and State. Kaggle.<a href = "https://www.kaggle.com/datasets/paultimothymooney/latitude-and-longitude-for-every-country-and-state">(Click Here)</a> </p>
+  </div>
+
+
 
 </main>
 <!-- /main column -->
