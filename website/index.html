@@ -1000,7 +1000,7 @@ function nexttick(func) {
       width="100%" height="500px"></iframe>
       <p><b>Figure 4a:</b> The figure displays a folium plot of train accidents in the United States. Each train accident is represented by a marker on the map, which have been clustered together into groups based on their locations. The plot allows users to interact with it, and by zooming into a particular region, details of each incident, such as the number of deaths and injuries, can be seen. There appears to be a concentration of accidents in the east and northeast regions, while other states, generally, tend to have a similar number of accidents.</p></td>
     <td><img src="../img/choropleth/innovative/CASKLDRR.gif" width="600px" height="500px"></img>
-    <p><br><b>Figure 4b:</b> The innovative map shows train deaths from 1975 to 2022. The train images represent the number of deaths in a given state and year, and the icon's size scales accordingly.The map provides a unique way of visualizing the geographic and temporal distribution of train accidents in the U.S. over time. On average, there are less than 30 deaths per state each year. However, there is a noticeable spike in Alabama in 1993.</p></td>
+    <p><br><b>Figure 4b:</b> The innovative map shows train deaths from 1975 to 2022. The train images represent the number of deaths in a given state and year, and the icon's size scales accordingly. The map provides a unique way of visualizing the geographic and temporal distribution of train accidents in the U.S. over time. On average, there are less than 30 deaths per state each year. However, there is a noticeable spike in Alabama in 1993.</p></td>
   </tr>
 </table>
 <p>Much like our previous findings, Figure 4a shows that train accidents are centered around mostly the Midwest and South. Unsurprisingly, in these areas with higher frequencies of train accidents, there also seems to be a greater number of train accident deaths (Figure 4b). Somewhat surprisingly, the number of deaths in the West seems to be concentrated around California. This may be a result of California being the second largest exporting state in the U.S. Naturally, this would lead to more incoming and outgoing supply trains, and, from a sheer numbers game, result in greater accidents and subsequently deaths.</p>
@@ -1016,40 +1016,42 @@ function nexttick(func) {
 
 <p>As shown in Figure 5, the monetary costs from train accidents in the South and Midwest are quite similar. More specifically, Texas makes up the majority of the South's train accident costs, followed closely by Illinois in the Midwest and California in the West. These costs coincide with our previous findings regarding the regions with the highest frequency of train accidents. Considering that Texas doesn't have an astonishingly high number of train accidents, Figure 5 may suggest that Texas experiences accidents that cause more equipment damage, leading to higher incurred costs.</p>
 
-  <p>To find out the causes of train accidents, our investigation has revealed that derailments are the leading cause of these incidents, and the magnitude of the derailment can play a significant role in the monetary damage incurred. Figure 6 shows that most of the damages are caused by derailments, with the rack, roadbed, and structures being the primary causes in derailment. The importance of proper maintenance and inspection of these critical components cannot be overstated, as they can help prevent derailments and minimize their impact when they do occur. The human factor also plays a role in train accidents, with train operator error being the second leading cause of derailments.</p>
-
-
+  <p>Thus far, we've generated insights on the locations of frequent train accidents, as well as their respective deaths and monetary costs incurred. Next, we dive deeper into the root causes of the accidents.</p>
+    
 <div style = "margin-left: 250px;">
   <iframe src="../img/timeseries/train_accidents_type.html" width="800px%" height="750px" scrolling="no"></iframe>
 </div>
 <div style = "margin-left: 20%;margin-right: 20%;" >
   <p><b>Figure 6:</b> The sankey plot displays the causes of train accidents and their subcategories. The plot shows that derailment is the most common cause of train accidents, with the majority of derailments being caused by track problems, railroad and structure issues, and train operator errors (human factors). </p>
-  </div>
+</div>
+    
+<p>Figure 6 shows that derailments are the leading cause of train accidents, and, based on our prior insights from Figure 5, the magnitude of the derailment most likely plays a significant role in the monetary costs and total casualties. Additionally, the primary cause of derailments stem from rack, roadbed, and structured, pointing to the importance of proper maintenance of railroads. The importance of regular inspection of nearby terrain and railroads themselves cannot be overstated, and the plot above further reinforces that upkeep of older infrastructure can help prevent derailments or at least minimize the damages when they do occur. Another major contributor to derailments are train operations related to human factors. As expected of any manual work, human error also plays a role in train accidents, with train operator error being the second leading cause of derailments.</p>
 
-  <p>Our investigation into the causes of train accidents has led us to examine the potential influence of weather and temperature on these incidents. We looked at the relationship between weather conditions, temperature, and the resulting damages caused by train accidents. During clear days, the number of train accidents is higher but during cloudy days, the damages caused by train accidents are more significant, as indicated by the larger bubble size in Figure 7. However, it is essential to note that weather and temperature may not be the sole cause of these incidents, and other factors could be at play as well. </p>
+
+  <p>With the root cause of train accidents considered, we also must examine external factors that may potentially contribute to the frequency of train accidents.</p>
 
 <div style = "margin-left: 180px;">
   <iframe src="../img/bubblechart/bubblechart.html" width="900px" height="500px"></iframe>
 </div>
 <div style = "margin-left: 14%;margin-right: 16%;" >
-  <p><b>Figure 7:</b> The bubble plot displays the relationship between the damage cost of train accidents and the weather conditions at the time of the accident. The size of the bubble represents the damage cost, while the color and position of the bubble represent the weather condition and temperature range, respectively. The plots indicates that during the cloudy days, modt of the accidental damage occur.</p>
+  <p><b>Figure 7:</b> The bubble plot displays the relationship between the monetary cost of train accidents and the weather conditions at the time of the accident. The size of the bubble represents the total monetary cost, while the color and position of the bubble represent the weather, temperature, and date. The plot indicates that the most costly accidents occur on cloudy days.</p>
   </div>
+  
+<p>Figure 7 examines the relationship between weather conditions, temperature, and the resulting monetary costs resulting from train accidents. Surprisingly, there are more accidents that occur on clear days than cloudy days, as shown by the higher prevalence of yellow bubbles than green. However, when accidents do occur on cloudy days, they seem to be more costly and significant, as indicated by the larger green bubbles. However, it is essential to note that weather and temperature may not be the sole cause of these incidents, and other factors, such as the aforementioned terrain and human error, could be at play as well.</p>
 
-<p>After conducting research on train accidents, our curiosity led us to expand our investigation to include aircraft crashes in the United States. We are interested in exploring the various factors that contribute to aviation accidents, as air travel is one of the major forms of transportation nowadays.</p>
+<br></br>
 
-<p>As we delved into the data, we came across a time series plot (Figure 8) that showed the number of aircraft crashes in the USA from 1948 to 2009. The graph was fascinating and revealed that the number of accidents varied significantly over the years. We noticed that there were certain periods when the number of accidents was relatively high, such as between 1962 to 1990. Upon further investigation, we learned that this period marked the increased popularity of air travel and the involvement of aircraft in military operations during the Vietnam War. However, we were encouraged to see that over the past few decades, there has been a significant improvement in the facilities and infrastructure related to air travel, as well as advancements in technology. These improvements have contributed to a decline in the number of aircraft crashes in the USA.</p>
-
+<p>After conducting research on train accidents, our curiosity led us to expand our investigation to include aircraft crashes in the United States. 
 <div style = "margin-left: 250px;">
   <img src = "../img/timeseries/aircraft_accidents_timeseries.gif"
     width="800px" height="500px"></img>
 </div>
 <div style = "margin-left: 20%;margin-right: 20%;" >
-  <p><b>Figure 8:</b> The time series plot represents the number of aircraft crashes in the United States from 1908 to 2009. The plot indicates an overall increase in the number of crashes since 1908, with a peak 1972, followed by a gradual decline.</p>
+  <p><b>Figure 8:</b> The figure displays a time series plot of aircraft crashes in the United States from 1908 to 2009 with the red line indicating the moving average. The plot indicates an overall increase in the number of crashes since 1908, with a peak in 1972, followed by a gradual decline.</p>
   </div>
+<p>Figure 8 shows, initially, an increasing trend which reverses after peaking in 1972. Upon further investigation, we learned that airplanes became commercially available in the early 1930s. Additionally, the mid-to-late 20th century marked the increased popularity for air travel as well as the involvement of aircraft in military operations during the Vietnam War. However, over the past few decades, there has been a downward trend in the number of airplane crashes, which may be a result of improvements in the technology, facilities, and infrastructure related to air travel. Additionally, Figure 8, when compared with Figure 2, shows that aircraft accidents occur 2-3 times less frequently than train accidents when considering the overlapping timelines.</p>
 
-<br>
-
-<p>Upon investigating the time period of 1962 to 1990 and examining the major aircraft crashes that occurred during this time frame, we became interested in understanding the reasons behind these incidents. Our research revealed that a significant number of these crashes were attributed to the US military air force, which sheds light on why the number of crashes during this period was higher. Additionally, we found that air taxi services were the second most common reason for aircraft crashes during this time, as shown in Figure 9b.</p>
+<p>To better understand the turning point in the rise and eventual decline of airplane crashes, we focused our attention between the years 1962 and 1990.</p>
 
 <table>
   <tr>
@@ -1057,59 +1059,76 @@ function nexttick(func) {
       width="100%" height="500px"></iframe>
       <p><b>Figure 9a:</b> The figure displays a time series plot of aircraft crashes in the United States from 1962 to 1990. The plot indicates an overall fluctuation in the number of crashes during this period.</p></td>
     <td><iframe src="../img/Lolipop/top_10_aircrafts.html" width="600px" height="500px"></iframe>
-      <p><b>Figure 9b:</b> The lollipop plot representing the number of operator-related aircraft accidents in the United States from 1962 to 1990. The plot indicates that a significant number of accidents were caused by the US military air force operators.</p></td>
+      <p><b>Figure 9b:</b> The lollipop plot representing the number of operator-related aircraft accidents in the United States from 1962 to 1990. The plot indicates that a significant number of accidents were caused by the U.S. military air force operators.</p></td>
   </tr>
 </table>
+  
+<p>Figure 9a shows general fluctuations in the aircraft accidents from 1962 to 1990. However, these fluctuations don't appear to relate to seasonality. Rather, when examining the aircraft crashes that occurred during this time frame, Figure 9b shows that a significant number of these crashes were attributed to the U.S. military air force and navy, which coincides with operations during the Vietnam War. Following the U.S. military, commercial use-case airliners were the second most common reason for aircraft crashes during this time. This seems to also coincide with the increase in commercial flying that occurred during the mid-to-late 20th century.</p>
 
-<p> Our investigation led us to examine the regions and states where these crashes occurred, and we were surprised to find that the western region of the US had a higher number of major aircraft crashes compared to other regions.This is seen in Figure 10a. Furthermore, we found that New York was the most affected state in terms of major aircraft crashes in the West region. The state's airspace was a major transportation hub, and it saw a high number of flights passing through its airspace every day. Moreover, the presence of major airports such as JFK and LaGuardia made it a popular destination for air travel.
-</p>
+
+<p>Next, we wanted to determine if there were certain regions and states that saw a high frequency of airplane crashes.</p>
 
 <table>
   <tr>
     <td><iframe src="../img/choropleth/folium/folium_plane.html"
       width="100%" height="500px"></iframe>
-      <p><b>Figure 10a:</b>The folium plot represents the number of aircraft accidents in the United States by state and year. The interactive map allows users to click on a colored circle to view details of the number of deaths and ground deaths for that state and year.</p></td>
+      <p><b>Figure 10a:</b> The figure displays a folium plot of airplane accidents in the United States. Each airplane accident is represented by a marker on the map, which have been clustered together into groups based on their locations. The plot allows users to interact with it, and by zooming into a particular region, details of each incident, such as the number of onboard and ground deaths, can be seen. There appears to be a concentration of accidents in the east and northeast regions, while central states, generally, tend to have a lower number of accidents.</p></td>
     <td><img src="../img/choropleth/innovative/KLDAP.gif" width="600px" height="500px"></img>
-    <p><br><b>Figure 10b:</b>The innovative map shows the motion of aircraft crashes from year to year across the United States. The larger airplane images represent states with higher numbers of accidents, while smaller airplane images represent states with fewer accidents. The map provides a unique and interactive way of visualizing the geographic and temporal distribution of aircraft crashes in the US over time.</p></td>
+    <p><br><b>Figure 10b:</b> The innovative map shows onboard aircraft deaths from 1975 to 2022. The plane images represent the number of deaths in a given state and year, and the icon's size scales accordingly. The map provides a unique way of visualizing the geographic and temporal distribution of airplane accidents in the U.S. over time. On average, there are less than 50 deaths per state each year. However, there are noticeable spikes in Illinois in 1979, Georgia in 1993, New York in 1996 and 2001, and Massachusetts in 1999.
+    </p></td>
   </tr>
 </table>
 
-<p>Our analysis revealed a strong correlation between the regions with the highest incidence of aircraft crashes and the regions with the highest number of aircraft damages and fatalities.Figure 11, which we analyzed as part of our research, clearly shows that New York, Alaska, and California had the highest number of major aircraft damages. Moreover, the corresponding number of fatalities for each of these states was also ranked highest in California, followed by New York and Alaska.</p>
+<p>Similar to our findings on train accidents from figure 4a, figure 10a shows that a majority of airplane crashes occur in the midwest. Expectedly, airplane crashes that result in greater onboard casualties seem to occur heavily on the coasts (figure 10b), since these would be locations with larger airplanes for longer travel with more passengers onboard. We also found that New York was the most affected state in terms of major aircraft crashes in the East. This coincides with New York being a major transportation zone for immigration and emigration with the presence of major airports, such as JFK and LaGuardia, making it a popular hub for air travel.
+</p>
+
+<p>We next wanted to examine which regions had the most fatal airplane crashes.</p>
+
 
 <div style = "margin-left: 100px;">
   <img src="../img/combined_air.png" width="90%" height="400px"></img>
 </div>
 <div style = "margin-left: 8%;margin-right: 8%;" >
-  <p><b>Figure 11:</b> The figure displays the major cities affected by aircraft accidental damage in the United States, as well as the total number of fatalities caused by these accidents in each state from 1908 to 2009. The wordcloud shows that New York and California are the most affected states, while the bar plot confirms this with California and New York having the highest number of recorded fatalities among all states. </p>
+  <p><b>Figure 11:</b> The figure displays the major cities affected by aircraft accidents in the United States, as well as the total number of fatalities caused by accidents in each state from 1908 to 2009. The wordcloud shows that New York and California are the most affected states. The bar plot confirms this with California and New York having the highest number of recorded fatalities among all states. </p>
   </div>
 
-<p>After completing our analysis of major aircraft crashes in the United States, we wanted to examine the crash count and corresponding fatalities in each state during the period of 1960-1990. According to Figure 12, Alaska had the highest number of crashes during this time period, with a corresponding high number of fatalities. However, in the past two decades, there has been a decrease in both the number of crashes and fatalities in Alaska. California also had a high number of crashes and fatalities during this time period, with a peak in December 1978 that resulted in a significant number of fatalities. However, like Alaska, there has been a gradual decrease in the number of crashes and fatalities in California past 2 decades.</p>
+<p>Unsurprisingly, figure 11 indicates that regions with frequent airplane crashes has a greater number of fatalities. This suggests that airplane crashes, expectedly, result in significant loss of life. Surprisingly, despite New York having the most occurrences of airplane crashes, California had the greatest number of fatalities from airplane crashes, which suggest that California experienced more devastating accidents. Additionally, our previous insight from figures 10 coincide with the wordcloud, where coastal states, such as New York, California, and Alaska, are the top three states for airplane crashes. These three states also have noticeably greater fatalities than the fourth state (Illinois).</p>
+
+
+<p>To get a more granular look of the data, we examined the total number of airplane crashes and fatalities by state for each year</p>
+
 <div>
-<iframe src="../img/linked_charts/link-plot.html" width="100%" height="500px" scrolling="no"></iframe>
-</div>
-<div style = "margin-left: 1%;margin-right: 1%; margin-top: 0;" >
-  <p><b>Figure 12:</b> The linked plot displays the total number of aircraft crashes and fatalities for each state in the United States over the years. The linked plot allows users to interact with it, providing a unique and dynamic way of visualizing the relationship between the number of crashes and fatalities across different states over time. The plot shows that Alaska has the highest number of total crashes.</p>
+  <iframe src="../img/linked_charts/link-plot.html" width="100%" height="500px" scrolling="no"></iframe>
   </div>
-</div>
+  <div style = "margin-left: 1%;margin-right: 1%; margin-top: 0;" >
+    <p><b>Figure 12:</b> The linked plot displays the total number of aircraft crashes and fatalities for each state in the United States from 1908 to 2009. The linked plot allows users to interact with it, providing a unique and dynamic way of visualizing the relationship between the number of crashes and fatalities across different states over time. The plot shows that Alaska has the highest number of total crashes.</p>
+    </div>
+
+<p>According to figure 12, Alaska has the highest number of crashes during this time period, followed by California. However, when considering the fatalities between Alaska and California, California appears to have more frequent and significant accidents, resulting in California having the most fatalities related to aircraft accidents (as seen from figure 11). Another interesting feature is New York. Despite being the state where airplane accidents are third most frequent, the instances are glaringly not as frequent as Alaska or California. Upon inspecting New York individually, we can see a large spike in fatalities in 2001, which coincides with the 9/11 attack. With this particular instance removed, it appears that New York may actually be on-par in terms of accident frequency and fatality as other states.</p>
 
 <br></br>
 <div id = "conc" >
   <h2 style="text-align: center;">Conclusion</h2>
-
 </div>
+<p>Throughout this study, we analyzed trends in transportation accidents relating to trains and airplanes. We examined changes in accident frequency over time, and the regional hot spots in which these transportation accidents occurred most frequently while also digging into the potential causes for our findings. We also explored external contributing factors as well as geopolitical events that co-occurred during specific timeframes.</p>
 
+<p>Returning to our initial motivations, it appears that the East Palestine train derailment wasn't something out of the blue. Considering the frequency of train derailments, it appears that the incident in Ohio may have caused the media stir because of the following chemical burn that led to pollution in the water and air, causing downstream effects on livestock and neighboring states.</p>
+
+<p>Additionally, airplanes, in general, appear to be a safe form of transportation, as the instances of airplane crashes has been on the decline despite the rise in usage from the general populace. Nonetheless, when accidents do occur, they are quite devastating.</p>
+
+<p>There is further room for exploration from our current study. Despite scavenging national and state-level government transportation websites for datasets on airplane and railroad traffic, we weren't able to find comprehensive data for a large enough time frame. If this becomes available, it would be interesting to investigate the proportion of accidents, as well as the change in normalized counts. This could reveal insights on the magnitude of change in the number of accidents over time.</p>
 
 <div id = "references" >
   <h2 style="text-align: center;">References</h2>
+  <p>Mooney, P. T. Latitude and Longitude for Every Country and State. Kaggle.<a href = "https://www.kaggle.com/datasets/paultimothymooney/latitude-and-longitude-for-every-country-and-state">(Click Here)</a> </p>
+  <p>Sauro Grandi. Airplane Crashes Since 1908. Kaggle. <a href = "https://www.kaggle.com/datasets/saurograndi/airplane-crashes-since-1908">(Click Here)</a></p>
   <p>Office of Safety Analysis. (2021). Railroad safety statistics annual report: 2020. Federal Railroad Administration.<a href = "https://safetydata.fra.dot.gov/OfficeofSafety/publicsite/on_the_fly_download.aspx">(Click Here)</a></p>
   <p>U.S. Department of Transportation. (2011). Rail Equipment Accident/Incident. Federal Railroad Administration.<a href = "https://railroads.dot.gov/forms-guides-publications/guides/618054-rail-equipment-accidentincident-thru-52011-206kb">(Click Here)</a></p>
-  <p>U.S. Department of Transportation. Appendix C: Train Operation Human Factor. Federal Railroad Administration. <a href = " https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-train-operation-human-factor">(Click Herr)</a> </p>
+  <p>U.S. Department of Transportation. Appendix C: Train Operation Human Factor. Federal Railroad Administration. <a href = " https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-train-operation-human-factor">(Click Here)</a> </p>
   <p>U.S. Department of Transportation. Appendix C: Signal and Communication. Federal Railroad Administration. <a href = "https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-signal-and-communication">(Click Here)</a></p>
   <p>U.S. Department of Transportation. Appendix C: Track, Roadbed, and Structure. Federal Railroad Administration. <a href = "https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-track-roadbed-and-structure">(Click Here)</a></p>
   <p>U.S. Department of Transportation. Appendix C: Mechanical and Electrical Failures. <a href = "https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-mechanical-and-electrical-failures">(Click Here)</a></p>
   <p>U.S. Department of Transportation. Appendix C: Miscellaneous Causes Not Otherwise Listed.<a href = "https://railroads.dot.gov/forms-guides-publications/guides/appendix-c-miscellaneous-causes-not-otherwise-listed">(Click Here)</a></p>
-  <p>Sauro Grandi. Airplane Crashes Since 1908. Kaggle. <a href = "https://www.kaggle.com/datasets/saurograndi/airplane-crashes-since-1908">(Click Here)</a></p>
-  <p>Mooney, P. T. Latitude and Longitude for Every Country and State. Kaggle.<a href = "https://www.kaggle.com/datasets/paultimothymooney/latitude-and-longitude-for-every-country-and-state">(Click Here)</a> </p>
   </div>
 
 
